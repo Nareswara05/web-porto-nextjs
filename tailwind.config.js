@@ -6,12 +6,22 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    fontFamily: {
+      primary:['Gluten', 'cursive'],
+      Poppins:['Poppins', 'cursive'],
+    },
     extend: {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      colors: { 
+        'primary': '#4A8EB6',
+        'gradient': 'linear-gradient(#3BF686, #4CA9FF)',
+        'secondary': '#3BF686',
+        
+       },
     },
   },
   plugins: [],

@@ -25,3 +25,37 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+} 
+
+.button-with-gradient-border {
+  position: relative;
+  padding: 16px 40px; 
+  background-color: transparent;
+  margin-top: 32px; 
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.button-with-gradient-border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  padding: 2px; 
+  background: linear-gradient(to right, #3BF686, #4CA9FF);
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude; 
+  pointer-events: none;
+}
