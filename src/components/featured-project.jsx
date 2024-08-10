@@ -24,7 +24,7 @@ const FeaturedProject = () => {
             </div>
             <div className='flex flex-col gap-3 w-full'>
                 {projects.map((item) => (
-                    <CardProject title={item.title} type={item.type} link={item.link} programs={item.programs} desc={item.desc} image={item.image} />
+                    <CardProject title={item.title} key={item.id} type={item.type} link={item.link} programs={item.programs} desc={item.desc} image={item.image} />
                 ))}
             </div>
 
