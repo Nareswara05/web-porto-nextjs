@@ -14,7 +14,7 @@ const Header = () => {
             color: "transparent",
           }}
         >
-          Hello there! I'm 
+          Hello there! Im 
         </h1>
         <h1
           className="text-5xl font-semibold mx-auto mt-2 px-1"
