@@ -40,6 +40,7 @@ const About = () => {
                 <Image
                     src={profile}
                     className="w-[350px] h-[350px] rounded-xl object-cover"
+                    alt =''
                 />
             </div>
             <div>
