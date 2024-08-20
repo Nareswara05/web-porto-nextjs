@@ -19,7 +19,7 @@ module.exports = {
       colors: { 
         'primary': '#4A8EB6',
         'gradient': 'linear-gradient(#3BF686, #4CA9FF)',
-        'secondary': '#3BF686',
+        'secondary': '#00B2FF',
         
        },
     },

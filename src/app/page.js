@@ -15,7 +15,7 @@ export default function Home() {
     <div>
       <ParticleComponent />
       <Navbar />
-      <div className='flex flex-col gap-12 relative z-10 px-[114px] py-20'>
+      <div className='flex flex-col gap-20 relative z-10 px-[114px] py-20'>
         <Hero />
         <About />
         <Skill/>

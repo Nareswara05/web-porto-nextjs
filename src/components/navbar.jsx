@@ -10,8 +10,7 @@ const Navbar = () => {
         {id:5, name:'Portfolio', path:'/portfolio'},
     ]
   return (
-    <div className='flex justify-center relative z-50'>
-        <nav className='py-8 w-[1141px] fixed bg-[#0C0C0C] flex justify-between border-b border-gray-300'>
+        <nav className='py-8 px-[114px] z-50 w-full  bg-[#0C0C0C]  fixed  flex justify-between border-b border-gray-300'>
             <h1 className='text-secondary font-bold text-[20px]'>
                 Nareswara
             </h1>
@@ -21,7 +20,6 @@ const Navbar = () => {
                 ))}
             </ul>
         </nav>
-    </div>
   )
 }
 
