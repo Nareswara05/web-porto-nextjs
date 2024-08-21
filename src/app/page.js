@@ -12,15 +12,11 @@ import React, { Component } from 'react';
 
 export default function Home() {
   return (
-    <div>
-      <ParticleComponent />
-      <Navbar />
       <div className='flex flex-col gap-20 relative z-10 px-[114px] py-20'>
         <Hero />
         <About />
         <Skill/>
         <FeaturedProject/>
       </div>
-    </div>
   )
 }

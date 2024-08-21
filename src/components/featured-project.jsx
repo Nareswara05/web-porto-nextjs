@@ -28,7 +28,7 @@ const FeaturedProject = () => {
                     <CardProject title={item.title} key={item.id} type={item.type} link={item.link} programs={item.programs} desc={item.desc} image={item.image} />
                 ))}
             </div>
-                <button className="px-10 w-fit py-4 bg-[#323443] hover:bg-opacity-40 bg-opacity-20 rounded-xl flex gap-2 items-center">
+                <button className="px-10 w-fit py-4 bg-[#323443] bg-opacity-20 hover:bg-opacity-40  rounded-xl flex gap-2 items-center">
                      <IoMdMenu/>
                     See More
                 </button>

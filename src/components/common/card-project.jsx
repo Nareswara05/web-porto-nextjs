@@ -5,7 +5,7 @@ import { IoArrowForward } from 'react-icons/io5';
 const CardProject = ({ image, title, type, desc, link, programs }) => {
   return (
     <div className='flex justify-between'>
-      <div className='bg-[#323443] p-12 rounded-xl relative'>
+      <div className='bg-[#323443] bg-opacity-20 p-12 rounded-xl relative'>
         <div className='p-2 bg-[#3F4152] rounded-lg text-md w-fit absolute right-3 top-3'>
           <div className='-rotate-45 text-lg'>
             <IoArrowForward />
@@ -24,7 +24,7 @@ const CardProject = ({ image, title, type, desc, link, programs }) => {
             <div key={index} className='relative group'>
               <button
                 title={program.prev}
-                className='bg-[#323443] p-2 text-3xl rounded-xl transition-transform duration-300 ease-in-out transform group-hover:scale-110'
+                className='bg-[#323443] bg-opacity-20 p-2 text-3xl rounded-xl transition-transform duration-300 ease-in-out transform group-hover:scale-110'
                 style={{ color: program.color }}
               >
                 <program.logo />

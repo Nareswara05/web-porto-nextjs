@@ -20,7 +20,8 @@ const Hero = () => {
                 <div className='text-[64px] font-bold'>
                     <TypeAnimation
                         sequence={[
-                            'FrontEnd Development', 1000,
+                            'FrontEnd Web Developer', 1000,
+                            'Software Engineer', 1000,
                             'UI Designer', 1000,
                             'UX Researcher', 1000,
                         ]}
