@@ -30,7 +30,7 @@ const About = () => {
                         My name is Nareswara Maulana Aletha Alhaq, but you can call me Nares. I am a student at SMK Raden Umar Said Kudus with a keen interest in <span className='text-primary'>FrontEnd Web Development</span> and <span className='text-secondary'>UI/UX Design</span>. I love turning design mockups into interactive, user-friendly websites using modern web technologies. My passion for UI/UX design comes from a desire to create intuitive and enjoyable user experiences. I am proficient with tools like Figma and Adobe XD, and I value collaboration and communication in team settings.                   
                         </h1>
                     </div>
-                    <button className='px-6 py-4 bg-[#323443] flex items-center gap-2 rounded-xl hover:border hover:scale-110 transform transition-all hover:border-secondary duration-500 '>
+                    <button className='px-6 py-4 bg-[#323443] flex items-center gap-2 rounded-xl hover:border hover:skew-x-6 transform transition-all hover:border-secondary duration-500 '>
                         Download CV
                         <div className='text-xl'>
                             <HiOutlineDownload />
