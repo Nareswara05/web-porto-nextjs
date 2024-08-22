@@ -15,7 +15,7 @@ const FeaturedProject = () => {
                 { logo: RiReactjsFill, color: '#61DBFB', prev: 'reactjs' },
                 {logo : RiTailwindCssFill, color : '#61DBFB', prev : 'tailwindcss' },
             ],
-            image : nuri,
+            image : "https://media.licdn.com/dms/image/v2/D562DAQEWZW4nzFF9CA/profile-treasury-image-shrink_800_800/profile-treasury-image-shrink_800_800/0/1719359282328?e=1724943600&v=beta&t=XKF8v2bNxHs9wJRcdoWewvpAIepFoqzECUra2lz8h78",
         },
     ]
     return (

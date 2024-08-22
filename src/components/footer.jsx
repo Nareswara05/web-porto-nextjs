@@ -10,14 +10,13 @@ const Footer = () => {
   const [dateInitialized, setDateInitialized] = useState(false);
 
   useEffect(() => {
-    // Initialize the date on the client side
     setDateInitialized(true);
 
     const intervalId = setInterval(() => {
       setCurrentDate(new Date());
     }, 1000);
 
-    return () => clearInterval(intervalId); // Cleanup interval on component unmount
+    return () => clearInterval(intervalId);
   }, []);
 
   const formatDate = (date) => {
@@ -49,13 +48,13 @@ const Footer = () => {
   ];
 
   return (
-    <div className="flex flex-col gap-4 items-center justify-center relative z-20 my-20">
-      <h1 className="text-[24px] font-semibold text-center">Nareswara Maulana Aletha Alhaq</h1>
+    <div className="flex flex-col gap-2 md:gap-4 items-center justify-center relative z-20 my-20">
+      <h1 className="text-md md:text-[24px] font-semibold text-center">Nareswara Maulana Aletha Alhaq</h1>
       <div className="flex gap-2">
-        <h1 className="text-[#A1A1AA] text-[18px]">
+        <h1 className="text-[#A1A1AA] text-[14px]">
           {dateInitialized ? formatDate(currentDate) : 'Loading...'}
         </h1>
-        <h1 className="text-[#A1A1AA] font-semibold text-[18px]">
+        <h1 className="text-[#A1A1AA] font-semibold text-[14px]">
           {dateInitialized ? formatTime(currentDate) : 'Loading...'}
         </h1>
       </div>
