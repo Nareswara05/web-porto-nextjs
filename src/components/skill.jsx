@@ -106,92 +106,10 @@ const Skill = () => {
 ];
 
 
-//   const data = [
-//     {
-//         logo: FaHtml5,
-//         title: 'HTML',
-//         difficulty: 'Advanced',
-//         color: 'text-[#E44D26]',
-//         borderColor: 'border-[#E44D26]',
-//     },
-//     {
-//         logo: FaCss3,
-//         title: 'CSS',
-//         difficulty: 'Advanced',
-//         color: 'text-[#1E90FF]',
-//         borderColor: 'border-[#1E90FF]',
-//     },
-//     {
-//         logo: IoLogoJavascript,
-//         title: 'JavaScript',
-//         difficulty: 'Advanced',
-//         color: 'text-[#F7E04C]',
-//         borderColor: 'border-[#F7E04C]',
-//     },
-//     {
-//         logo: FaReact,
-//         title: 'React JS',
-//         difficulty: 'Advanced',
-//         color: 'text-[#61DAFB]',
-//         borderColor: 'border-[#61DAFB]',
-//     },
-//     {
-//         logo: SiNextdotjs,
-//         title: 'Next JS',
-//         difficulty: 'Advanced',
-//         color: 'text-[#00E5A7]',
-//         borderColor: 'border-[#00E5A7]',
-//     },
-//     {
-//         logo: RiTailwindCssFill,
-//         title: 'Tailwind CSS',
-//         difficulty: 'Advanced',
-//         color: 'text-[#38B2AC]',
-//         borderColor: 'border-[#38B2AC]',
-//     },
-//     {
-//         logo: SiFlutter,
-//         title: 'Flutter',
-//         difficulty: 'Intermediate',
-//         color: 'text-[#03A9F4]',
-//         borderColor: 'border-[#03A9F4]',
-//     },
-//     {
-//         logo: FaPhp,
-//         title: 'PHP',
-//         difficulty: 'Intermediate',
-//         color: 'text-[#9B5DE5]',
-//         borderColor: 'border-[#9B5DE5]',
-//     },
-//     {
-//         logo: SiLaravel,
-//         title: 'Laravel',
-//         difficulty: 'Intermediate',
-//         color: 'text-[#FF4F4F]',
-//         borderColor: 'border-[#FF4F4F]',
-//     },
-//     {
-//         logo: SiMysql,
-//         title: 'MySQL',
-//         difficulty: 'Intermediate',
-//         color: 'text-[#5DADE2]',
-//         borderColor: 'border-[#5DADE2]',
-//     },
-//     {
-//         logo: SiTypescript,
-//         title: 'TypeScript',
-//         difficulty: 'Intermediate',
-//         color: 'text-[#3178C6]',
-//         borderColor: 'border-[#3178C6]',
-//     },
-//     {
-//         logo: FaJava,
-//         title: 'Java',
-//         difficulty: 'Intermediate',
-//         color: 'text-[#00B0FF]',
-//         borderColor: 'border-[#00B0FF]',
-//     },
-// ];
+
+
+
+
 
 
 
@@ -200,9 +118,9 @@ const Skill = () => {
   return (
     <div className='flex flex-col gap-16 justify-center items-center'>
       <div className='pb-2 w-fit border-primary border-b-2'>
-        <h1 className='text-center text-white text-[40px] font-bold'>Skills</h1>
+        <h1 className='text-center text-white text-3xl md:text-[40px] font-bold'>Skills</h1>
       </div>
-      <div className='grid grid-cols-3 w-full gap-6 items-center justify-center'>
+      <div className='grid md:grid-cols-2 grid-cols-3 lg:grid-cols-3 w-full gap-6 items-center justify-center'>
         {data.map((item, index) => (
           <CardSkill
             key={index}

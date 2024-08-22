@@ -11,7 +11,7 @@ const CardProject = ({ image, title, type, desc, link, programs }) => {
             <IoArrowForward />
           </div>
         </div>
-        <Image src={image} alt={title} width={450} height={250} className='rounded-xl' />
+        <Image src={image} alt={title} width={1000} height={1000} className='rounded-xl w-[500px] ' />
       </div>
       <div className='flex flex-col justify-between'>
         <div>

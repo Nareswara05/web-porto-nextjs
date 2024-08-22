@@ -12,7 +12,7 @@ import React, { Component } from 'react';
 
 export default function Home() {
   return (
-      <div className='flex flex-col gap-20 relative z-10 px-[114px] py-20'>
+      <div className='flex flex-col gap-20 relative z-20 px-[40px] md:px-[60px]  lg:px-[114px] py-20'>
         <Hero />
         <About />
         <Skill/>
