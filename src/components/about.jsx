@@ -32,17 +32,25 @@ const About = () => {
                             My name is Nareswara Maulana Aletha Alhaq, but you can call me Nares. I am a student at SMK Raden Umar Said Kudus with a keen interest in <span className='text-primary'>FrontEnd Web Development</span> and <span className='text-secondary'>UI/UX Design</span>. I love turning design mockups into interactive, user-friendly websites using modern web technologies. My passion for UI/UX design comes from a desire to create intuitive and enjoyable user experiences. I am proficient with tools like Figma and Adobe XD, and I value collaboration and communication in team settings.
                         </h1>
                     </div>
-                    <button
-                        type="button"
-                        className="bg-transparent mt-8 text-center w-full sm:w-48 md:w-64 xl:w-72 rounded-2xl h-14 relative text-white lg:text-md font-medium border-[#27272A] border group"
+                    <a
+                        href="/CV_Nares.pdf"
+                        download="CV_Nares.pdf"
+                        className="w-full"
                     >
-                        <p className="transform -translate-x-5 text-sm">Download CV</p>
-                        <div
-                            className="bg-[#27272A] text-2xl backdrop-blur-xl rounded-xl h-12 w-1/4 flex items-center justify-center absolute right-1 top-[4px] group-hover:w-full z-10 duration-500"
+                        <button
+                            type="button"
+                            className="bg-transparent mt-8 text-center w-full sm:w-48 md:w-64 xl:w-72 rounded-2xl h-14 relative text-white lg:text-md font-medium border-[#27272A] border group"
                         >
-                            <TbDownload />
-                        </div>
-                    </button>
+                            <p className="transform -translate-x-5 text-sm">Download CV</p>
+                            <div
+                                className="bg-[#27272A] text-2xl backdrop-blur-xl rounded-xl h-12 w-1/4 flex items-center justify-center absolute right-1 top-[4px] group-hover:w-full z-10 duration-500"
+                            >
+                                <TbDownload />
+                            </div>
+                        </button>
+                    </a>
+
+
 
 
                 </div>
@@ -53,7 +61,7 @@ const About = () => {
                 />
             </div>
             <div>
-                <WhatIDo/>
+                <WhatIDo />
             </div>
         </div>
     )
