@@ -1,39 +1,37 @@
-import { nuri } from '@/lib/utils/image'
-import React from 'react'
-import { RiReactjsFill, RiTailwindCssFill } from 'react-icons/ri'
-import CardProject from './common/card-project'
+import React from 'react';
 import { IoMdMenu } from "react-icons/io";
+import projects from '@/app/project/project';
+import CardProject from './common/card-project';
+import Link from 'next/link';
 
 const FeaturedProject = () => {
-    const projects =[
-        {
-            title: 'Project 1',
-            type : 'Web Development',
-            desc : 'lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet',
-            link : 'https://www.google.com',
-            programs: [
-                { logo: RiReactjsFill, color: '#61DBFB', prev: 'reactjs' },
-                {logo : RiTailwindCssFill, color : '#61DBFB', prev : 'tailwindcss' },
-            ],
-            image : "https://media.licdn.com/dms/image/v2/D562DAQEWZW4nzFF9CA/profile-treasury-image-shrink_800_800/profile-treasury-image-shrink_800_800/0/1719359282328?e=1724943600&v=beta&t=XKF8v2bNxHs9wJRcdoWewvpAIepFoqzECUra2lz8h78",
-        },
-    ]
     return (
-        <div className='flex flex-col gap-16  justify-center'>
-            <div className='pb-2 w-fit  border-secondary border-b-2 mx-auto'>
+        <div className='flex flex-col gap-16 justify-center'>
+            <div className='pb-2 w-fit border-secondary border-b-2 mx-auto'>
                 <h1 className='text-center text-white text-3xl md:text-[40px] font-bold'> Featured Project</h1>
             </div>
-            <div className='flex flex-col gap-3 w-full'>
-                {projects.map((item) => (
-                    <CardProject title={item.title} key={item.id} type={item.type} link={item.link} programs={item.programs} desc={item.desc} image={item.image} />
+            <div className='flex flex-col gap-10 w-full'>
+                {projects.slice(0, 2).map((item, index) => (
+                    <CardProject
+                        key={item.id}
+                        title={item.title}
+                        type={item.type}
+                        link={item.link}
+                        programs={item.programs}
+                        desc={item.desc}
+                        image={item.image}
+                        isReversed={index % 2 !== 0}
+                    />
                 ))}
             </div>
+            <Link href="/project">
                 <button className="md:px-10 px-6 w-fit py-4 bg-[#323443] bg-opacity-20 hover:bg-opacity-40 text-sm md:text-lg rounded-xl flex gap-2 items-center">
-                     <IoMdMenu/>
+                    <IoMdMenu />
                     See More
                 </button>
+            </Link>
         </div>
-    )
+    );
 }
 
-export default FeaturedProject
+export default FeaturedProject;
