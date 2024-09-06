@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 const FeaturedProject = () => {
     return (
-        <div className='flex flex-col gap-16 justify-center'>
+        <div className='flex flex-col gap-16 justify-center' id="project">
             <div className='pb-2 w-fit border-secondary border-b-2 mx-auto'>
                 <h1 className='text-center text-white text-3xl md:text-[40px] font-bold'> Featured Project</h1>
             </div>

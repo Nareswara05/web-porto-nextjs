@@ -1,7 +1,9 @@
-import { dinacom, nuri, ruscare, smartchoice } from '@/lib/utils/image';
+import { asn, dinacom, nuri, ruscare, smartchoice } from '@/lib/utils/image';
 import { BiLogoGoLang } from 'react-icons/bi';
 import { RiReactjsFill, RiTailwindCssFill } from 'react-icons/ri'
 import { SiFlutter, SiLaravel, SiMysql, SiNextdotjs } from 'react-icons/si';
+import { FiFigma} from 'react-icons/fi';
+
 
 
 const projects =[
@@ -86,16 +88,27 @@ const projects =[
             desc : 'This is a project that I worked on when I was an intern at the company PT Nuri Gaya Citra as a UI/UX Designer. Where I was asked to complete the design of the COD feature for e-commerce applications, starting from interviewing users, understanding what users feel. Create user interfaces that are easy to understand, complete prototyping and testing for users.',
             link : 'https://www.figma.com/design/nqsLkiuYaR9oxvOPPNgNgk/Project-Based-Virtual-Internship?node-id=0-1&t=cOoAgpAhkpNnQWtY-1',
             programs: [
-                { logo: SiNextdotjs, color: '#fffff', prev: 'nextjs' },
-                { logo: RiTailwindCssFill, color: '#06B6D4', prev: 'tailwindcss' },
-                { logo: SiLaravel, color: '#FF2D20', prev: 'laravel' },
-                { logo: SiMysql, color: '#00758F', prev: 'mysql' },
+                { logo: FiFigma, color: '#0ACF83', prev: 'figma' },
             ],
             
             
             
             
             image : "https://media.licdn.com/dms/image/v2/D562DAQEWZW4nzFF9CA/profile-treasury-image-shrink_800_800/profile-treasury-image-shrink_800_800/0/1719359282328?e=1726153200&v=beta&t=xX72-oRtQbm3ZmzMLMOOoAnOcIgwnHPsKk5UFH3T8mc",
+        },
+        {
+            title: 'Redesign Website TemanASN',
+            type : 'UI Design',
+            desc : 'I was asked to recreate the user interface on the TemanASN website, I started improving it in terms of user comfort, the size of each button, contrasting colors and several size changes.',
+            link : 'https://www.figma.com/design/nqsLkiuYaR9oxvOPPNgNgk/Project-Based-Virtual-Internship?node-id=0-1&t=cOoAgpAhkpNnQWtY-1',
+            programs: [
+                { logo: FiFigma, color: '#0ACF83', prev: 'figma' },
+            ],
+            
+            
+            
+            
+            image : asn,
         },
     ]
 

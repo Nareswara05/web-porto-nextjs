@@ -48,7 +48,7 @@ const Footer = () => {
   ];
 
   return (
-    <div className="flex flex-col gap-2 md:gap-4 items-center justify-center relative z-20 my-20">
+    <div className="flex flex-col gap-2 md:gap-4 items-center justify-center relative z-20 my-20" id="contact">
       <h1 className="text-md md:text-[24px] font-semibold text-center">Nareswara Maulana Aletha Alhaq</h1>
       <div className="flex gap-2">
         <h1 className="text-[#A1A1AA] text-[14px]">
