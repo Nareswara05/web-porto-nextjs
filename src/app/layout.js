@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={sora.className}>
       <ParticleComponent />
-      <Navbar />
+      {/* <Navbar /> */}
         {children}
       <Footer/>
       </body>

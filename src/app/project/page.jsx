@@ -6,7 +6,7 @@ import projects from './project'
 const page = () => {
     
   return (
-    <div className='px-10 lg:px-[114px] py-28 lg:py-32 relative z-10'>
+    <div className='px-10 lg:px-[114px] py-28 lg:py-12 relative z-10'>
         <h1 className='text-[30px] md:text-[40px] lg:text-[50px] w-full md:w-2/3 lg:w-1/3 font-bold'>
           Project that I have <span className='text-primary'>done</span>
         </h1>
