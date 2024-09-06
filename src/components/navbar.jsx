@@ -8,16 +8,16 @@ const Navbar = () => {
     const genericHamburgerLine = `h-1 w-8 my-1 rounded-full bg-white transition ease transform duration-300`;
     const nav = [
         { id: 1, name: 'Home', path: '/' },
-        { id: 2, name: 'About', path: '/about' },
-        { id: 3, name: 'Skill', path: '/contact' },
-        { id: 4, name: 'Project', path: '/services' },
-        { id: 5, name: 'Contact', path: '/portfolio' },
+        { id: 2, name: 'About', path: '#about' },
+        { id: 3, name: 'Skill', path: '#skill' },
+        { id: 4, name: 'Project', path: '#project' },
+        { id: 5, name: 'Contact', path: '#contact' },
     ]
     return (
         <nav className="fixed justify-center flex w-screen top-8 z-50">
             <ul className='flex gap-4 md:gap-12 w-fit  backdrop-blur-lg border px-6 md:px-10 py-5 border-[#27272A] rounded-full'>
                 {nav.map((item) => (
-                    <Link href={item.path} className="font-medium text-sm md:text-[16px]" key={item.id} >{item.name}</Link>
+                    <a href={item.path} className="font-medium text-sm md:text-[16px]" key={item.id} >{item.name}</a>
                 ))}
             </ul>
         </nav>
