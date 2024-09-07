@@ -39,11 +39,11 @@ const Footer = () => {
     },
     {
       logo: FaDribbble,
-      socmed: 'https://dribbble.com/nareswaramaulana',
+      socmed: 'https://dribbble.com/Revvvz',
     },
     {
       logo: FaGithub,
-      socmed: 'https://github.com',
+      socmed: 'https://github.com/Nareswara05',
     },
   ];
 
