@@ -26,27 +26,21 @@ const WhatIDo = () => {
         },
         {
             id: 4,
-            icon: FaPuzzlePiece ,
+            icon: FaPuzzlePiece,
             title: 'Problem Solving',
             desc: 'I deliver creative solutions to complex design and development challenges.'
         },
     ]
-  
+
     return (
         <div className='flex xl:flex-row flex-col gap-12 lg:justify-between'>
             <div>
                 <h1 className='font-bold text-xl md:text-[28px] '>What Can I do?</h1>
-                <h2 className='text-sm lg:text-[16px] font-normal pt-2 pr-2'>
-                  I can build websites from 
-                  <span className='text-primary font-semibold'> UI design</span> 
-                  to solving user problems and 
-                  <span className='text-secondary font-semibold'> developing</span> 
-                  them based on the designs.
-                </h2>
+                <h2 className='text-sm lg:text-[16px] font-normal pt-2 pr-2'>I can build websites starting from creating <span className='text-primary font-semibold'>UI designs</span>, finding solutions to user problems, and <span className='text-secondary font-semibold'>developing</span> websites according to the designs that have been made.</h2>
             </div>
             <div className='xl:flex gap-4 xl:flex-row grid grid-cols-2'>
                 {data.map((item) => (
-                    <CardDo key={item.id} icon={item.icon} title={item.title} desc={item.desc}/>
+                    <CardDo key={item.id} icon={item.icon} title={item.title} desc={item.desc} />
                 ))}
             </div>
         </div>

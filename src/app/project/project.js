@@ -1,7 +1,7 @@
-import { asn, dinacom, nuri, ruscare, smartchoice } from '@/lib/utils/image';
+import { asn, birrul, dinacom, nuri, ruscare, smartchoice } from '@/lib/utils/image';
 import { BiLogoGoLang } from 'react-icons/bi';
 import { RiReactjsFill, RiTailwindCssFill } from 'react-icons/ri'
-import { SiFlutter, SiLaravel, SiMysql, SiNextdotjs } from 'react-icons/si';
+import { SiFlutter, SiJavascript, SiLaravel, SiMysql, SiNextdotjs, SiTypescript } from 'react-icons/si';
 import { FiFigma} from 'react-icons/fi';
 
 
@@ -27,6 +27,7 @@ const projects =[
             link : 'https://react-techkomfest-noesantara.vercel.app/',
             programs: [
                 { logo: RiReactjsFill, color: '#61DBFB', prev: 'reactjs' },
+                { logo: SiJavascript, color: '#F7DF1E', prev: 'javascript' }, 
                 { logo: RiTailwindCssFill, color: '#06B6D4', prev: 'tailwindcss' },
                 { logo: SiLaravel, color: '#FF2D20', prev: 'laravel' },
                 { logo: SiMysql, color: '#00758F', prev: 'mysql' },
@@ -42,6 +43,7 @@ const projects =[
             link : 'https://github.com/Fadzaa/nextjs-smartcarrier',
             programs: [
                 { logo: SiNextdotjs, color: '#00000', prev: 'nextjs' },
+                { logo: SiJavascript, color: '#F7DF1E', prev: 'javascript' }, 
                 { logo: RiTailwindCssFill, color: '#06B6D4', prev: 'tailwindcss' },
                 { logo: SiLaravel, color: '#FF2D20', prev: 'laravel' },
                 { logo: SiMysql, color: '#00758F', prev: 'mysql' },
@@ -57,6 +59,7 @@ const projects =[
             link : 'https://github.com/Nareswara05/nextjs-smartchoice',
             programs: [
                 { logo: SiNextdotjs, color: '#00000', prev: 'nextjs' },
+                { logo: SiJavascript, color: '#F7DF1E', prev: 'javascript' }, 
                 { logo: RiTailwindCssFill, color: '#06B6D4', prev: 'tailwindcss' },
                 { logo: BiLogoGoLang, color: '#29beb0 ', prev: 'golang' },
                 { logo: SiMysql, color: '#00758F', prev: 'mysql' },
@@ -72,6 +75,7 @@ const projects =[
             link : 'https://ruscare.vercel.app/',
             programs: [
                 { logo: SiNextdotjs, color: '#fffff', prev: 'nextjs' },
+                { logo: SiJavascript, color: '#F7DF1E', prev: 'javascript' }, 
                 { logo: RiTailwindCssFill, color: '#06B6D4', prev: 'tailwindcss' },
                 { logo: SiLaravel, color: '#FF2D20', prev: 'laravel' },
                 { logo: SiMysql, color: '#00758F', prev: 'mysql' },
@@ -81,6 +85,25 @@ const projects =[
             
             
             image : ruscare,
+        },
+        {
+            title: 'SD Birrul Walidain Profile',
+            type : 'Web Development',
+            desc : 'My team and I were trusted by one of the companies in our city to create a website profile for one of the schools in our city, where we made it according to what the client wanted.',
+            link : '',
+            programs: [
+                { logo: SiNextdotjs, color: '#ffffff', prev: 'nextjs' },
+                { logo: RiTailwindCssFill, color: '#06B6D4', prev: 'tailwindcss' },
+                { logo: SiLaravel, color: '#FF2D20', prev: 'laravel' },
+                { logo: SiMysql, color: '#00758F', prev: 'mysql' },
+                { logo: SiTypescript, color: '#3178C6', prev: 'typescript' }, 
+            ],
+            
+            
+            
+            
+            
+            image : birrul,
         },
         {
             title: 'Nuri E-Commerce App Design',

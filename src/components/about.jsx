@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import { profile } from '@/lib/utils/image'
+import { me, profile } from '@/lib/utils/image'
 import { HiOutlineDownload } from "react-icons/hi";
 import CardDo from './common/card-do';
 import WhatIDo from './what-i-do';
@@ -55,7 +55,7 @@ const About = () => {
 
                 </div>
                 <Image
-                    src={profile}
+                    src={me}
                     className="lg:w-[350px] h-[200px] md:h-[350px] rounded-xl object-cover"
                     alt=''
                 />
