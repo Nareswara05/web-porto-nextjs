@@ -2,7 +2,7 @@ import React from 'react'
 
 const CardDo = ({ icon: Icon, title, desc }) => {
   return (
-    <div className='relative w-full max-w-xs md:max-w-sm xl:w-[240px] h-[190px] bg-[#323443] px-4 bg-opacity-20 flex flex-col items-center rounded-2xl'>
+    <div className='relative w-full max-w-xs md:max-w-full xl:w-[240px] h-[190px] bg-[#323443] px-4 bg-opacity-20 flex flex-col items-center rounded-2xl'>
       <div className='p-4 border border-primary bg-[#323443] bg-opacity-70 rounded-full absolute -top-8 text-white text-3xl md:text-4xl flex justify-center items-center w-fit h-fit'>
         <Icon />
       </div>
