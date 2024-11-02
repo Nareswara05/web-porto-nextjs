@@ -7,7 +7,7 @@ const CardSkill = ({ logo: Logo, title, difficulty, color, borderColor, backgrou
         >
             <div className='flex sm:gap-4 items-center'>
                 <div className='text-4xl'>
-                    <Logo className={`text-5xl lg:text-3xl transition-all duration-300 ${color}`} />
+                    <Logo className={`text-5xl lg:text-3xl transition-all text-white duration-300 ${color}`} />
                 </div>
                 <div>
                     <h1

@@ -7,7 +7,7 @@ import Button from './common/button';
 const Hero = () => {
     return (
         <div className="flex flex-col h-screen text-center md:py-44 justify-center items-center gap-2  z-10 relative">
-            <h1 className="font-semibold text-3xl md:text-[32px]">Hello there!, i am <span style={{
+            <h1 className="font-semibold text-3xl md:text-[32px] text-white">Hello there!, i am <span style={{
                 background: "linear-gradient(to right, #3BF686, #4CA9FF)",
                 WebkitBackgroundClip: "text",
                 backgroundClip: "text",
@@ -17,7 +17,7 @@ const Hero = () => {
             </span>
             </h1>
             <div className='flex flex-col items-center  md:gap-10 md:pt-4 text-center ju'>
-                <h1 className="md:text-[60px] lg:text-[70px] text-lg font-semibold">I’m specialising in </h1>
+                <h1 className="md:text-[60px] lg:text-[70px] text-lg font-semibold text-white">I’m specialising in </h1>
                 <div className='lg:text-[60px]  text-2xl font-extrabold text-center md:text-5xl'>
                     <TypeAnimation
                         sequence={[

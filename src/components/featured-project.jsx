@@ -25,7 +25,7 @@ const FeaturedProject = () => {
                 ))}
             </div>
             <Link href="/project">
-                <button className="md:px-10 px-6 w-fit py-4 bg-[#323443] bg-opacity-20 hover:bg-opacity-40 text-sm md:text-lg rounded-xl flex gap-2 items-center">
+                <button className="md:px-10 px-6 w-fit text-white py-4 bg-[#323443] bg-opacity-20 hover:bg-opacity-40 text-sm md:text-lg rounded-xl flex gap-2 items-center">
                     <IoMdMenu />
                     See More
                 </button>
