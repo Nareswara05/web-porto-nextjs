@@ -18,7 +18,7 @@ const CardProject = ({ image, title, type, desc, link, programs, isReversed }) =
                 <div className='flex flex-col gap-9 lg:justify-between'>
                     <div className="w-full">
                         <h1 className='font-semibold text-[14px] md:text-[18px] text-[#DEDEDE]'>{type}</h1>
-                        <h1 className='font-bold text-[36px] md:text-[40px]'>{title}</h1>
+                        <h1 className='font-bold text-[36px] md:text-[40px] text-white'>{title}</h1>
                         <h1 className='font-normal text-[12px] md:text-[18px] lg:w-[650px] text-justify text-gray-200'>{desc}</h1>
                     </div>
                     <div className='flex gap-3'>

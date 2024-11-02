@@ -28,7 +28,7 @@ const About = () => {
                         >
                             Hello!
                         </h1>
-                        <h1 className='lg:text-lg text-justify   text-sm  font-normal lg:max-w-[500px] xl:max-w-[600px]'>
+                        <h1 className='lg:text-lg text-justify text-white   text-sm  font-normal lg:max-w-[500px] xl:max-w-[600px]'>
                             My name is Nareswara Maulana Aletha Alhaq, but you can call me Nares. I am a student at SMK Raden Umar Said Kudus with a keen interest in <span className='text-primary'>FrontEnd Web Development</span> and <span className='text-secondary'>UI/UX Design</span>. I love turning design mockups into interactive, user-friendly websites using modern web technologies. My passion for UI/UX design comes from a desire to create intuitive and enjoyable user experiences. I am proficient with tools like Figma and Adobe XD, and I value collaboration and communication in team settings.
                         </h1>
                     </div>

@@ -35,8 +35,8 @@ const WhatIDo = () => {
     return (
         <div className='flex xl:flex-row flex-col gap-12 lg:justify-between'>
             <div>
-                <h1 className='font-bold text-xl md:text-[28px] '>What Can I do?</h1>
-                <h2 className='text-sm lg:text-[16px] font-normal pt-2 pr-2'>I can build websites starting from creating <span className='text-primary font-semibold'>UI designs</span>, finding solutions to user problems, and <span className='text-secondary font-semibold'>developing</span> websites according to the designs that have been made.</h2>
+                <h1 className='font-bold text-xl md:text-[28px] text-white'>What Can I do?</h1>
+                <h2 className='text-sm lg:text-[16px] font-normal pt-2 pr-2 text-white'>I can build websites starting from creating <span className='text-primary font-semibold'>UI designs</span>, finding solutions to user problems, and <span className='text-secondary font-semibold'>developing</span> websites according to the designs that have been made.</h2>
             </div>
             <div className='xl:flex gap-4 xl:flex-row grid grid-cols-2'>
                 {data.map((item) => (
