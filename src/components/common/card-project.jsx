@@ -5,14 +5,14 @@ import Link from 'next/link';
 
 const CardProject = ({ image, title, type, desc, link, programs, isReversed }) => {
     return (
-        <Link href={link}>
+        <div >
             <div className={`flex ${isReversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-8 flex-col lg:justify-between`}>
                 <div className='bg-[#323443] lg:w-[550px] h-[200px] md:h-[370px] bg-opacity-20 p-8 lg:p-12 rounded-xl relative'>
-                    <div className=' p-1 lg:p-2 bg-[#3F4152] rounded-lg text-md w-fit absolute right-3 top-3'>
+                    <Link href={link} className=' p-1 lg:p-2 bg-[#3F4152] rounded-lg text-md w-fit absolute right-3 top-3'>
                         <div className='-rotate-45 text-sm lg:text-lg'>
                             <IoArrowForward />
                         </div>
-                    </div>
+                    </Link>
                     <Image src={image} alt={title} width={2000} height={2000} className='rounded-xl w-full h-full object-cover' />
                 </div>
                 <div className='flex flex-col gap-9 lg:justify-between'>
@@ -39,7 +39,7 @@ const CardProject = ({ image, title, type, desc, link, programs, isReversed }) =
                     </div>
                 </div>
             </div>
-        </Link>
+        </div>
     );
 }
 

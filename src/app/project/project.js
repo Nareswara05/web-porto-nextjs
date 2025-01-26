@@ -1,7 +1,7 @@
-import { asn, birrul, dinacom, kostku, nuri, ppdb, ruscare, ruscareMentor, smartchoice, snbp, techcom } from '@/lib/utils/image';
+import { asn, bbo, betteru_app, betteru_landing, birrul, dinacom, kostku, nuri, ppdb, ruscare, ruscareMentor, smartchoice, snbp, techcom } from '@/lib/utils/image';
 import { BiLogoGoLang } from 'react-icons/bi';
 import { RiReactjsFill, RiTailwindCssFill } from 'react-icons/ri'
-import { SiFlutter, SiJavascript, SiLaravel, SiMysql, SiNextdotjs, SiTypescript } from 'react-icons/si';
+import { SiAmazon, SiFlutter, SiJavascript, SiLaravel, SiMeta, SiMysql, SiNextdotjs, SiTensorflow, SiTypescript } from 'react-icons/si';
 import { FiFigma } from 'react-icons/fi';
 
 
@@ -156,20 +156,20 @@ const projects = [
 
         image: ppdb,
     },
-    // {
-    //     title: 'Nuri E-Commerce App Design',
-    //     type : 'UI Design',
-    //     desc : 'This is a project that I worked on when I was an intern at the company PT Nuri Gaya Citra as a UI/UX Designer. Where I was asked to complete the design of the COD feature for e-commerce applications, starting from interviewing users, understanding what users feel. Create user interfaces that are easy to understand, complete prototyping and testing for users.',
-    //     link : 'https://www.figma.com/design/nqsLkiuYaR9oxvOPPNgNgk/Project-Based-Virtual-Internship?node-id=0-1&t=cOoAgpAhkpNnQWtY-1',
-    //     programs: [
-    //         { logo: FiFigma, color: '#0ACF83', prev: 'figma' },
-    //     ],
+    {
+        title: 'Nuri E-Commerce App Design',
+        type : 'UI Design',
+        desc : 'This is a project that I worked on when I was an intern at the company PT Nuri Gaya Citra as a UI/UX Designer. Where I was asked to complete the design of the COD feature for e-commerce applications, starting from interviewing users, understanding what users feel. Create user interfaces that are easy to understand, complete prototyping and testing for users.',
+        link : 'https://www.figma.com/design/nqsLkiuYaR9oxvOPPNgNgk/Project-Based-Virtual-Internship?node-id=0-1&t=cOoAgpAhkpNnQWtY-1',
+        programs: [
+            { logo: FiFigma, color: '#0ACF83', prev: 'figma' },
+        ],
 
 
 
 
-    //     image : "https://media.licdn.com/dms/image/v2/D562DAQEWZW4nzFF9CA/profile-treasury-image-shrink_800_800/profile-treasury-image-shrink_800_800/0/1719359282328?e=1726153200&v=beta&t=xX72-oRtQbm3ZmzMLMOOoAnOcIgwnHPsKk5UFH3T8mc",
-    // },
+        image : nuri,
+    },
     {
         title: 'Redesign Website TemanASN',
         type: 'UI Design',
@@ -183,6 +183,51 @@ const projects = [
 
 
         image: asn,
+    },
+    {
+        title: 'BetterU App',
+        type: 'App Development',
+        desc: 'This application made me and my team get 3rd place in the 2025 Dinus Application Competition. Where the theme of this competition was about Society 5.0, we made an application in the form of a daily calorie counter and a food calorie counter',
+        link: 'https://better-u.vercel.app/',
+        programs: [
+            { logo: SiFlutter, color: '#02569B', prev: 'flutter' },
+            { logo: SiLaravel, color: '#FF2D20', prev: 'laravel' },
+            { logo: SiAmazon, color: '#FF9900', prev: 'aws' },
+            { logo: SiTensorflow, color: '#FF6F00', prev: 'tensorflow' },
+            { logo: SiMeta, color: '#4267B2', prev: 'meta llama' },
+        ],
+        image: betteru_app,
+    },
+    
+    {
+        title: 'BetterU Landing Page',
+        type: 'Web Development',
+        desc: 'This website is also used to provide information related to the BetterU Application',
+        link: 'https://better-u.vercel.app/',
+        programs: [
+            { logo: SiNextdotjs, color: '#fffff', prev: 'nextjs' },
+            { logo: SiJavascript, color: '#F7DF1E', prev: 'javascript' },
+            { logo: RiTailwindCssFill, color: '#06B6D4', prev: 'tailwindcss' },
+        ],
+
+
+
+
+        image: betteru_landing,
+    },
+    {
+        title: 'Buah Baru Online Website Design',
+        type : 'UI Design',
+        desc : 'This project was a request from one of my clients, he asked me to make a UI design for an online fruit sales website in Yogyakarta',
+        link : '#',
+        programs: [
+            { logo: FiFigma, color: '#0ACF83', prev: 'figma' },
+        ],
+
+
+
+
+        image : bbo,
     },
 ]
 
