@@ -1,6 +1,5 @@
 import profile from '../Assets/profile.jpg';
 import me from '../Assets/me.jpg';
-import nuri from '../Assets/nuri.png';
 import dinacom from '../Assets/project/dinacom.png';
 import ruscare from '../Assets/project/ruscare.png';
 import smartchoice from '../Assets/project/smartchoice.png';
@@ -11,6 +10,11 @@ import kostku from '../Assets/project/kostku.jpg';
 import snbp from '../Assets/project/snbp.png';
 import techcom from '../Assets/project/techom.jpg';
 import ppdb from '../Assets/project/ppdb.png';
+import betteru_landing from '../Assets/project/betteru_landing.png';
+import betteru_app from '../Assets/project/betteru_app.png';
+import bbo from '../Assets/project/bbo.png';
+import nuri from '../Assets/project/nuri.png';
+
 
 
 
@@ -29,5 +33,8 @@ export {
     snbp,
     techcom,
     ppdb,
+    betteru_landing,
+    betteru_app,
+    bbo
 
 }
