@@ -1,3 +1,5 @@
+"use client"
+
 import CardProject from '@/components/common/card-project'
 import { nuri } from '@/lib/utils/image'
 import React from 'react'

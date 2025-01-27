@@ -1,3 +1,5 @@
+"userserver"
+
 import { asn, bbo, betteru_app, betteru_landing, birrul, dinacom, kostku, nuri, ppdb, ruscare, ruscareMentor, smartchoice, snbp, techcom } from '@/lib/utils/image';
 import { BiLogoGoLang } from 'react-icons/bi';
 import { RiReactjsFill, RiTailwindCssFill } from 'react-icons/ri'

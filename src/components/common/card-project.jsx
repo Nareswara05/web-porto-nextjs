@@ -1,13 +1,19 @@
-import React from 'react';
+
+import React, { useEffect } from 'react';
 import Image from 'next/image';
 import { IoArrowForward } from 'react-icons/io5';
 import Link from 'next/link';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const CardProject = ({ image, title, type, desc, link, programs, isReversed }) => {
+    useEffect(() => {
+        AOS.init({ duration: 1200, easing: "ease-out", once: false });
+    }, []);
     return (
         <div >
             <div className={`flex ${isReversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-8 flex-col lg:justify-between`}>
-                <div className='bg-[#323443] lg:w-[550px] h-[200px] md:h-[370px] bg-opacity-20 p-8 lg:p-12 rounded-xl relative'>
+                <div  data-aos="zoom-in-up" data-aos-delay="500" className='bg-[#323443] lg:w-[550px] h-[200px] md:h-[370px] bg-opacity-20 p-8 lg:p-12 rounded-xl relative'>
                     <Link href={link} className=' p-1 lg:p-2 bg-[#3F4152] rounded-lg text-md w-fit absolute right-3 top-3'>
                         <div className='-rotate-45 text-sm lg:text-lg'>
                             <IoArrowForward />
@@ -15,7 +21,7 @@ const CardProject = ({ image, title, type, desc, link, programs, isReversed }) =
                     </Link>
                     <Image src={image} alt={title} width={2000} height={2000} className='rounded-xl w-full h-full object-cover' />
                 </div>
-                <div className='flex flex-col gap-9 lg:justify-between'>
+                <div  data-aos="zoom-in-down" data-aos-delay="500"   className='flex flex-col gap-9 lg:justify-between'>
                     <div className="w-full">
                         <h1 className='font-semibold text-[14px] md:text-[18px] text-[#DEDEDE]'>{type}</h1>
                         <h1 className='font-bold text-[36px] md:text-[40px] text-white'>{title}</h1>
