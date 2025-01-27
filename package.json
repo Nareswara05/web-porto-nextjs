@@ -11,7 +11,8 @@
   "dependencies": {
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.4.0",
-    "framer-motion": "^10.16.4",
+    "aos": "^2.3.4",
+    "framer-motion": "^10.18.0",
     "fs": "^0.0.1-security",
     "lottie-react": "^2.4.0",
     "next": "13.5.4",

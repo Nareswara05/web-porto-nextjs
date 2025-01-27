@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 
 const CardSkill = ({ logo: Logo, title, difficulty, color, borderColor, backgroundColor }) => {
+    useEffect(() => {
+        AOS.init({ duration: 1200, easing: "ease-out", once: false });
+    }, []);
     return (
         <div
-            className={`group h-full sm:justify-start border border-transparent  sm:w-full rounded-xl transition-all duration-300 bg-[#323443] bg-opacity-20 p-4 flex items-center justify-center hover:cursor-pointer hover:scale-105  ${borderColor} ${backgroundColor} hover:bg-opacity-5`}
+            data-aos="zoom-in"
+            className={`group h-full sm:justify-start border border-transparent  sm:w-full rounded-xl transition-all duration-300  bg-[#323443] bg-opacity-20 p-4 flex items-center justify-center hover:cursor-pointer hover:scale-105  ${borderColor} ${backgroundColor} hover:bg-opacity-5`}
         >
             <div className='flex sm:gap-4 items-center'>
                 <div className='text-4xl'>
