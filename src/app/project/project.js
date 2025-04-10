@@ -1,6 +1,6 @@
 "userserver"
 
-import { asn, bbo, betteru_app, betteru_landing, birrul, dinacom, kostku, nuri, ppdb, ruscare, ruscareMentor, smartchoice, snbp, techcom } from '@/lib/utils/image';
+import { asn, bbo, betteru_app, betteru_landing, birrul, dinacom, fundex, kostku, nuri, ppdb, ruscare, ruscareMentor, smartchoice, snbp, techcom } from '@/lib/utils/image';
 import { BiLogoGoLang } from 'react-icons/bi';
 import { RiReactjsFill, RiTailwindCssFill } from 'react-icons/ri'
 import { SiAmazon, SiFlutter, SiJavascript, SiLaravel, SiMeta, SiMysql, SiNextdotjs, SiTensorflow, SiTypescript } from 'react-icons/si';
@@ -211,10 +211,6 @@ const projects = [
             { logo: SiJavascript, color: '#F7DF1E', prev: 'javascript' },
             { logo: RiTailwindCssFill, color: '#06B6D4', prev: 'tailwindcss' },
         ],
-
-
-
-
         image: betteru_landing,
     },
     {
@@ -225,11 +221,17 @@ const projects = [
         programs: [
             { logo: FiFigma, color: '#0ACF83', prev: 'figma' },
         ],
-
-
-
-
         image : bbo,
+    },
+    {
+        title: 'FundEx Website Redesign',
+        type : 'UI Design',
+        desc : 'When I was interning at FundEx.Id, I was given the task of redesigning the landing page of the FundEx website by providing Moodboards and Design Systems.',
+        link : '#',
+        programs: [
+            { logo: FiFigma, color: '#0ACF83', prev: 'figma' },
+        ],
+        image : fundex,
     },
 ]
 

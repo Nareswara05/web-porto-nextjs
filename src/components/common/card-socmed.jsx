@@ -3,7 +3,6 @@ import Link from 'next/link';
 
 const CardSocmed = ({ logo: Logo, socmed }) => {
     return (
-        
             <Link href={socmed} passHref className="p-2 rounded-xl border-2 border-[#27272A] bg-transparent text-lg hover:scale-125 duration-300  text-white">
                 <Logo className="text-xl" />
             </Link>

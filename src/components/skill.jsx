@@ -8,13 +8,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const Skill = () => {
-  useEffect(() => {
-    AOS.init({
-      duration: 1200,
-      easing: 'ease-in-out', 
-      once: false, 
-    });
-  }, []);
+
 
 
     const data = [
@@ -121,14 +115,12 @@ const Skill = () => {
       <div className="pb-2 w-fit border-primary border-b-2">
         <h1
           className="text-center text-white text-3xl md:text-[40px] font-bold"
-          data-aos="fade-down"
         >
           Skills
         </h1>
       </div>
       <div
         className="grid md:grid-cols-2 grid-cols-3 lg:grid-cols-3 w-full gap-6 items-center justify-center"
-        data-aos="fade-up"
       >
         {data.map((item, index) => (
           <CardSkill
@@ -139,8 +131,6 @@ const Skill = () => {
             color={item.color}
             borderColor={item.borderColor}
             backgroundColor={item.backgroundColor}
-            data-aos="zoom-in" 
-            data-aos-delay={index * 100} 
           />
         ))}
       </div>

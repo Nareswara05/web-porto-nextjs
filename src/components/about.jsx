@@ -2,23 +2,15 @@ import React, { useEffect } from "react";
 import Image from "next/image";
 import { me } from "@/lib/utils/image";
 import { TbDownload } from "react-icons/tb";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import WhatIDo from "./what-i-do";
 
 const About = () => {
-  useEffect(() => {
-    AOS.init({
-      duration: 800,
-      once: false, 
-    });
-  }, []);
+  
 
   return (
     <div id="about" className="flex justify-center items-center flex-col gap-16">
       <div
         className="pb-2 w-fit border-secondary border-b-2"
-        data-aos="fade-up"
       >
         <h1 className="text-center text-white text-3xl md:text-[40px] font-bold">
           About Me
@@ -28,7 +20,6 @@ const About = () => {
       <div className="flex lg:flex-row flex-col-reverse items-center md:justify-between lg:mt-8 h-fit w-full">
         <div
           className="flex flex-col justify-between items-start"
-          data-aos="fade-right"
         >
           <div>
             <h1
@@ -72,7 +63,7 @@ const About = () => {
           </a>
         </div>
 
-        <div data-aos="fade-left">
+        <div>
           <Image
             src={me}
             className="lg:w-[350px] h-[200px] md:h-[350px] rounded-xl object-cover"
@@ -81,7 +72,7 @@ const About = () => {
         </div>
       </div>
 
-      <div data-aos="fade-up">
+      <div >
         <WhatIDo />
       </div>
     </div>

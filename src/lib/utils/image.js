@@ -14,6 +14,7 @@ import betteru_landing from '../Assets/project/betteru_landing.png';
 import betteru_app from '../Assets/project/betteru_app.png';
 import bbo from '../Assets/project/bbo.png';
 import nuri from '../Assets/project/nuri.png';
+import fundex from '../Assets/project/fundex.png';
 
 
 
@@ -35,6 +36,7 @@ export {
     ppdb,
     betteru_landing,
     betteru_app,
-    bbo
+    bbo,
+    fundex,
 
 }
