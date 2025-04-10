@@ -8,13 +8,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const Skill = () => {
-  useEffect(() => {
-    AOS.init({
-      duration: 1200,
-      easing: 'ease-in-out', 
-      once: false, 
-    });
-  }, []);
+
 
 
     const data = [
@@ -139,8 +133,6 @@ const Skill = () => {
             color={item.color}
             borderColor={item.borderColor}
             backgroundColor={item.backgroundColor}
-            data-aos="zoom-in" 
-            data-aos-delay={index * 100} 
           />
         ))}
       </div>
