@@ -115,14 +115,12 @@ const Skill = () => {
       <div className="pb-2 w-fit border-primary border-b-2">
         <h1
           className="text-center text-white text-3xl md:text-[40px] font-bold"
-          data-aos="fade-down"
         >
           Skills
         </h1>
       </div>
       <div
         className="grid md:grid-cols-2 grid-cols-3 lg:grid-cols-3 w-full gap-6 items-center justify-center"
-        data-aos="fade-up"
       >
         {data.map((item, index) => (
           <CardSkill
