@@ -15,7 +15,14 @@ import betteru_app from '../Assets/project/betteru_app.png';
 import bbo from '../Assets/project/bbo.png';
 import nuri from '../Assets/project/nuri.png';
 import fundex from '../Assets/project/fundex.png';
-
+import widarto from '../Assets/project/widarto.png'
+import yasuMatcha from '../Assets/project/yasumatcha.png'
+import plai from '../Assets/project/plai.png'
+import padelix from '../Assets/project/padelix.png'
+import nutrimate from '../Assets/project/nutrimate.png'
+import gotankUser from '../Assets/project/gotankuser.png'
+import gotankAdmin from '../Assets/project/gotankadmin.png'
+import gotankDriver from '../Assets/project/gotankdriver.png'
 
 
 
@@ -38,5 +45,13 @@ export {
     betteru_app,
     bbo,
     fundex,
+    widarto,
+    yasuMatcha,
+    plai,
+    padelix,
+    nutrimate,
+    gotankUser,
+    gotankAdmin,
+    gotankDriver,
 
 }
