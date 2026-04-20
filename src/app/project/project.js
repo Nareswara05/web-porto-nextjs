@@ -1,9 +1,9 @@
 "userserver"
 
-import { asn, bbo, betteru_app, betteru_landing, birrul, dinacom, fundex, kostku, nuri, ppdb, ruscare, ruscareMentor, smartchoice, snbp, techcom } from '@/lib/utils/image';
+import { asn, bbo, betteru_app, betteru_landing, birrul, dinacom, fundex, gotankAdmin, gotankDriver, gotankUser, kostku, nuri, nutrimate, padelix, plai, ppdb, ruscare, ruscareMentor, smartchoice, snbp, techcom, widarto, yasuMatcha } from '@/lib/utils/image';
 import { BiLogoGoLang } from 'react-icons/bi';
 import { RiReactjsFill, RiTailwindCssFill } from 'react-icons/ri'
-import { SiAmazon, SiFlutter, SiJavascript, SiLaravel, SiMeta, SiMysql, SiNextdotjs, SiTensorflow, SiTypescript } from 'react-icons/si';
+import { SiAmazon, SiFlutter, SiGooglecloud, SiGooglemaps, SiGooglesearchconsole, SiJavascript, SiLaravel, SiMeta, SiMysql, SiNextdotjs, SiTensorflow, SiTypescript } from 'react-icons/si';
 import { FiFigma } from 'react-icons/fi';
 
 
@@ -232,6 +232,111 @@ const projects = [
             { logo: FiFigma, color: '#0ACF83', prev: 'figma' },
         ],
         image : fundex,
+    },
+    {
+        title : 'GoTank Website Admin',
+        type : 'Web Development',
+        desc : 'This project is a comprehensive administrative dashboard designed for GoTank, an innovative platform focused on streamlining water distribution services. The system serves as a central command center to manage PDAM customer orders with precision and efficiency. Beyond order fulfillment, the dashboard empowers administrators to maintain high service standards through an integrated Customer Complaint Management system. It also features Real-Time Fleet Tracking, allowing for live monitoring of driver locations during water deliveries to ensure transparency and punctuality. To support data-driven decision-making, I integrated a Sales Analytics module that provides detailed recaps and insights into business performance.',
+        link : '#',
+        programs: [
+            { logo: SiNextdotjs, color: '#fffff', prev: 'nextjs' },
+            { logo: SiJavascript, color: '#F7DF1E', prev: 'javascript' },
+            { logo: RiTailwindCssFill, color: '#06B6D4', prev: 'tailwindcss' },
+            { logo: SiGooglecloud, color:'#4285F4', prev: 'google cloud' }
+        ],
+        image : gotankAdmin,
+    },
+    {
+        title : 'GoTank Application for Public',
+        type : 'App Development',
+        desc : 'Developed as a seamless interface for PDAM Salatiga customers, this application digitizes the entire water procurement journey. It empowers users to transition from traditional methods to a modern, digital ecosystem—enabling everything from instant water ordering and payments to real-time delivery tracking. The app also serves as a direct communication bridge, allowing users to file and monitor complaints efficiently, ensuring a transparent and reliable service experience.',
+        link : '#',
+        programs: [
+            { logo: SiFlutter, color: '#02569B', prev: 'flutter' },
+            { logo: SiLaravel, color: '#FF2D20', prev: 'laravel' },
+            { logo: SiGooglecloud, color:'#4285F4', prev: 'google cloud' },
+            { logo: SiGooglemaps, color:'#42f47dff', prev: 'google maps' },
+        ],
+        image : gotankUser,
+    },
+    {
+        title : 'GoTank Application for Driver',
+        type : 'App Development',
+        desc : 'Designed as a dedicated tool for PDAM Salatiga’s delivery fleet, this application streamlines the end-to-end water distribution process. It functions as a digital co-pilot, enabling drivers to receive automated task assignments and access precision navigation to customer locations. By digitizing the workflow—from initial dispatch to final delivery—the app ensures operational transparency and allows drivers to provide real-time progress reports, significantly improving fulfillment speed and service reliability.',
+        link : '#',
+        programs: [
+            { logo: SiFlutter, color: '#02569B', prev: 'flutter' },
+            { logo: SiLaravel, color: '#FF2D20', prev: 'laravel' },
+        ],
+        image : gotankDriver,
+    },
+    {
+        title : 'Widarto Impact',
+        type : 'Web Development',
+        desc : 'I got this project, where I overhauled almost 70% of the website content, starting from changing the theme, changing the database structure, adding a contact us feature that is connected to email.',
+        link : '#',
+        programs: [
+            {
+                logo : SiLaravel,
+                color : '#FF2D20',
+                prev : 'laravel'
+            },
+            {
+                logo : SiMysql,
+                color : '#00758F',
+                prev : 'mysql'
+            },
+            {
+                logo : RiTailwindCssFill,
+                color : '#06B6D4',
+                prev : 'tailwindcss'
+            },
+        ],
+        image : widarto,
+    },
+    {
+        title : 'Yasu Matcha',
+        type : 'UI Design',
+        desc : 'I got a project to design a website for a product called Yasu Matcha, where I did brainstorming, meeting with clients, making wireframes and making Hi-Fi Design.',
+        link : '#',
+         programs: [
+            { logo: FiFigma, color: '#0ACF83', prev: 'figma' },
+        ],
+        image : yasuMatcha,
+    },
+    {
+        title : 'Plai Cafe',
+        type : 'UI Design',
+        desc : 'I got a project to design a website for a cafe in Yogyakarta called Plai Cafe where I did brainstorming, meeting with clients, making wireframes and making Hi-Fi Design.',
+        link : '#',
+        programs: [
+            { logo: FiFigma, color: '#0ACF83', prev: 'figma' },
+        ],
+        image : plai,
+    },
+    {
+        title : 'Padelix',
+        type : 'UI Design',
+        desc : 'I was asked to make changes to sections on the Padelix website, where I changed several sections according to the client request.',
+        link : '#',
+         programs: [
+            { logo: FiFigma, color: '#0ACF83', prev: 'figma' },
+        ],
+        image : padelix,
+    },
+    {
+        title : 'Nutrimate - AI Nutrition Tracker',
+        type : 'Web Development',
+        desc : 'I participated in the ITFest Web Development Competition at UMK and won second place. I created a nutrition tracking website, where we can see how much nutrition our body needs, how much food nutrition we consume, recommendations for suitable foods for our body, and see how many calories we burn during exercise. This website is powered by Artificial Intelligence, where we only need to mention the name of the food and the type of exercise, and the AI ​​will analyze the nutrition and how many calories are burned.',
+        link : '#',
+        programs: [
+            { logo: SiNextdotjs, color: '#fffff', prev: 'nextjs' },
+            { logo: SiJavascript, color: '#F7DF1E', prev: 'javascript' },
+            { logo: RiTailwindCssFill, color: '#06B6D4', prev: 'tailwindcss' },
+            { logo: SiAmazon, color: '#FF9900', prev: 'aws' },
+            { logo: SiMeta, color: '#4267B2', prev: 'meta llama' },
+        ],
+        image : nutrimate,
     },
 ]
 
