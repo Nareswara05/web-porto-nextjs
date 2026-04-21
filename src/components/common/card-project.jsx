@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 const CardProject = ({ image, title, type, desc, link, programs, isReversed }) => {
     return (
-        <div >
+        <div>
             <div className={`flex ${isReversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-8 flex-col lg:justify-between`}>
                 <div  className='bg-[#323443] lg:w-[550px] h-[200px] md:h-[370px] bg-opacity-20 p-4 lg:p-8 rounded-xl relative'>
                     {/* <Link href={link} className=' p-1 lg:p-2 bg-[#3F4152] rounded-lg text-md w-fit absolute right-3 top-3'>
@@ -15,7 +15,7 @@ const CardProject = ({ image, title, type, desc, link, programs, isReversed }) =
                             <IoArrowForward />
                         </div>
                     </Link> */}
-                    <Image src={image} alt={title} width={2000} height={2000} className='rounded-xl w-full h-full object-cover' />
+                    <Image src={image} alt={title} width={800} height={600} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" quality={80} className='rounded-xl w-full h-full object-cover' />
                 </div>
                 <div   className='flex flex-col gap-9 lg:justify-between'>
                     <div className="w-full">

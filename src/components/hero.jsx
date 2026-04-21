@@ -6,7 +6,7 @@ import Button from './common/button';
 
 const Hero = () => {
     return (
-        <div className="flex flex-col h-screen text-center md:py-44 justify-center items-center gap-2  z-10 relative">
+        <div className="flex flex-col h-screen text-center md:py-44 justify-center items-center gap-2  z-10 relative" data-aos="fade-up">
             <h1 className="font-semibold text-3xl md:text-[32px] text-white">Hello there!, i am <span style={{
                 background: "linear-gradient(to right, #3BF686, #4CA9FF)",
                 WebkitBackgroundClip: "text",
