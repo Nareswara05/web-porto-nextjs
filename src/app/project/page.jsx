@@ -7,7 +7,7 @@ import projects from './project'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
-const page = () => {
+const Page = () => {
   useEffect(() => {
     AOS.init({
       duration: 800,
@@ -40,4 +40,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
