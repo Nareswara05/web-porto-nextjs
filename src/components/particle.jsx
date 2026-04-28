@@ -504,7 +504,7 @@ const ParticleComponent = (props) => {
           "value": true
         }
       }
-    }))
+    }), [])
       return <Particles id={props.id} init={partilesLoaded} options={options} className="-z-100"/>;
 }
 

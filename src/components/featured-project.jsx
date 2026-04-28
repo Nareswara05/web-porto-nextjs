@@ -12,6 +12,7 @@ const FeaturedProject = () => {
         <div 
             className='flex flex-col gap-16 justify-center' 
             id="project"
+            data-aos="fade-up"
         >
             <div 
                 className='pb-2 w-fit border-secondary border-b-2 mx-auto'

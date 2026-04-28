@@ -8,7 +8,7 @@ const About = () => {
   
 
   return (
-    <div id="about" className="flex justify-center items-center flex-col gap-16">
+    <div id="about" className="flex justify-center items-center flex-col gap-16" data-aos="fade-up">
       <div
         className="pb-2 w-fit border-secondary border-b-2"
       >

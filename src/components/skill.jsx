@@ -111,7 +111,7 @@ const Skill = () => {
   ];
 
   return (
-    <div className="flex flex-col gap-16 justify-center items-center" id="skill">
+    <div className="flex flex-col gap-16 justify-center items-center" id="skill" data-aos="fade-up">
       <div className="pb-2 w-fit border-primary border-b-2">
         <h1
           className="text-center text-white text-3xl md:text-[40px] font-bold"
