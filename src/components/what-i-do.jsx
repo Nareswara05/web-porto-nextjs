@@ -1,50 +1,33 @@
-import React from 'react'
+import React from 'react';
 import { BiSolidColorFill } from "react-icons/bi";
 import { BsGlobeAsiaAustralia } from "react-icons/bs";
 import { FaClipboardList, FaPuzzlePiece } from "react-icons/fa";
-
 import CardDo from './common/card-do';
-const WhatIDo = () => {
-    const data = [
-        {
-            id: 1,
-            icon: BiSolidColorFill,
-            title: 'UI Design',
-            desc: 'I craft intuitive and visually appealing interfaces tailored to user needs.'
-        },
-        {
-            id: 2,
-            icon: BsGlobeAsiaAustralia,
-            title: 'Web Development',
-            desc: 'I build responsive, high-performing websites with modern technologies.'
-        },
-        {
-            id: 3,
-            icon: FaClipboardList,
-            title: 'UX Researcher',
-            desc: 'I analyze user behavior to create designs that improve user experiences.'
-        },
-        {
-            id: 4,
-            icon: FaPuzzlePiece,
-            title: 'Problem Solving',
-            desc: 'I deliver creative solutions to complex design and development challenges.'
-        },
-    ]
 
-    return (
-        <div className='flex xl:flex-row flex-col gap-12 lg:justify-between'>
-            <div>
-                <h1 className='font-bold text-xl md:text-[28px] text-white'>What Can I do?</h1>
-                <h2 className='text-sm lg:text-[16px] font-normal pt-2 pr-2 text-white'>I can build websites starting from creating <span className='text-primary font-semibold'>UI designs</span>, finding solutions to user problems, and <span className='text-secondary font-semibold'>developing</span> websites according to the designs that have been made.</h2>
-            </div>
-            <div className='xl:flex gap-4 xl:flex-row grid grid-cols-2'>
-                {data.map((item) => (
-                    <CardDo key={item.id} icon={item.icon} title={item.title} desc={item.desc} />
-                ))}
-            </div>
-        </div>
-    )
+const WhatIDo = () => {
+  const data = [
+    { id: 1, icon: BiSolidColorFill,      title: 'UI Design',        desc: 'Crafting intuitive and visually appealing interfaces tailored to user needs.' },
+    { id: 2, icon: BsGlobeAsiaAustralia, title: 'Web Development',  desc: 'Building responsive, high-performing websites with modern technologies.' },
+    { id: 3, icon: FaClipboardList,       title: 'UX Research',      desc: 'Analyzing user behavior to create designs that improve user experiences.' },
+    { id: 4, icon: FaPuzzlePiece,         title: 'Problem Solving',  desc: 'Delivering creative solutions to complex design and development challenges.' },
+  ]
+
+  return (
+    <div className="flex flex-col gap-10">
+      <div className="flex flex-col gap-2">
+        <h3 className="text-white font-bold text-xl md:text-2xl">What Can I Do?</h3>
+        <p className="text-white/55 text-sm md:text-base max-w-lg leading-relaxed">
+          I can build websites — from creating <span className="text-[#3BF686] font-medium">UI designs</span>, finding solutions to user problems,
+          to <span className="text-[#4CA9FF] font-medium">developing</span> production-ready websites.
+        </p>
+      </div>
+      <div className="grid grid-cols-2 xl:grid-cols-4 gap-4">
+        {data.map((item) => (
+          <CardDo key={item.id} icon={item.icon} title={item.title} desc={item.desc} />
+        ))}
+      </div>
+    </div>
+  )
 }
 
 export default WhatIDo;
