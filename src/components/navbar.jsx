@@ -1,69 +1,90 @@
 "use client"
 
-import React, { useState } from 'react'
-import Link from 'next/link'
+import React, { useState, useEffect } from 'react'
+
+const nav = [
+  { id: 1, name: 'Home',    path: '/' },
+  { id: 2, name: 'About',   path: '#about' },
+  { id: 3, name: 'Skill',   path: '#skill' },
+  { id: 4, name: 'Project', path: '#project' },
+  { id: 5, name: 'Contact', path: '#contact' },
+]
 
 const Navbar = () => {
-    const [isOpen, setIsOpen] = useState(false);
-    const genericHamburgerLine = `h-1 w-8 my-1 rounded-full bg-white transition ease transform duration-300`;
-    const nav = [
-        { id: 1, name: 'Home', path: '/' },
-        { id: 2, name: 'About', path: '#about' },
-        { id: 3, name: 'Skill', path: '#skill' },
-        { id: 4, name: 'Project', path: '#project' },
-        { id: 5, name: 'Contact', path: '#contact' },
-    ]
-    return (
-        <nav className="fixed justify-center flex w-screen top-8 z-50">
-            <ul className='flex gap-4 md:gap-12 w-fit  backdrop-blur-lg border px-6 md:px-10 py-5 border-[#27272A] rounded-full'>
-                {nav.map((item) => (
-                    <a href={item.path} className="font-medium text-sm md:text-[16px]" key={item.id} >{item.name}</a>
-                ))}
-            </ul>
-        </nav>
-        // <nav className='md:py-8 py-4 px-8 md:px-[114px] z-50 w-full  bg-[#0C0C0C]  fixed  flex items-center justify-between border-b border-gray-300'>
-        //     <h1 className='text-secondary font-bold text-[20px]'>
-        //         Nareswara
-        //     </h1>
-        //     <button
-        //         className="flex flex-col h-12 w-12  rounded justify-center items-center group md:hidden"
-        //         onClick={() => setIsOpen(!isOpen)}
-        //     >
-        //         <div
-        //             className={`${genericHamburgerLine} ${isOpen
-        //                 ? "rotate-45 translate-y-3 opacity-50 group-hover:opacity-100"
-        //                 : "opacity-50 group-hover:opacity-100"
-        //                 }`}
-        //         />
-        //         <div className={`${genericHamburgerLine} ${isOpen ? "opacity-0" : "opacity-50 group-hover:opacity-100"}`} />
-        //         <div
-        //             className={`${genericHamburgerLine} ${isOpen
-        //                 ? "-rotate-45 -translate-y-3 opacity-50 group-hover:opacity-100"
-        //                 : "opacity-50 group-hover:opacity-100"
-        //                 }`}
-        //         />
-        //     </button>
-        //     <ul className='md:flex gap-12 hidden'>
-        //         {nav.map((item) => (
-        //             <Link href={item.path} className="font-medium text-[16px]" key={item.id} >{item.name}</Link>
-        //         ))}
-        //     </ul>
-        //     {isOpen && (
-        //         <div className="absolute top-20 backdrop-blur-sm inset-x-8 border border-[#27272A] bg-transparent px-12 py-12 rounded-xl">
-        //         <ul className="flex flex-col  font-bold ">
-        //                 {nav.map((item) => (
-        //                     <li key={item.id} className="hover:bg-primary hover:text-white p-2 rounded-2xl ">
-        //                         <Link href={item.path}>
-        //                             <h3 className=" text-lg  sm:text-2xl w-max">{item.name}</h3>
-        //                         </Link>
-        //                     </li>
-        //                 ))}
+  const [scrolled, setScrolled] = useState(false)
+  const [active, setActive]     = useState('Home')
+  const [open, setOpen]         = useState(false)
 
-        //             </ul>
-        //         </div>
-        //     )}
-        // </nav>
-    )
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20)
+    window.addEventListener('scroll', onScroll)
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  return (
+    <nav className={`fixed top-0 inset-x-0 z-50 flex justify-center pt-5 transition-all duration-300`}>
+      {/* Desktop pill */}
+      <div className={`hidden md:flex items-center gap-1 px-2 py-2 rounded-2xl border transition-all duration-300 ${
+        scrolled
+          ? 'border-white/10 bg-black/60 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.4)]'
+          : 'border-white/8 bg-white/5 backdrop-blur-md'
+      }`}>
+        {nav.map((item) => (
+          <a
+            key={item.id}
+            href={item.path}
+            onClick={() => setActive(item.name)}
+            className={`relative px-5 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${
+              active === item.name
+                ? 'text-white'
+                : 'text-white/50 hover:text-white/80'
+            }`}
+          >
+            {active === item.name && (
+              <span className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#3BF686]/20 to-[#4CA9FF]/20 border border-white/10" />
+            )}
+            <span className="relative z-10">{item.name}</span>
+          </a>
+        ))}
+      </div>
+
+      {/* Mobile */}
+      <div className="md:hidden flex items-center justify-between w-full px-6">
+        <span className="text-white font-bold text-base tracking-tight">
+          Nares<span style={{ background: 'linear-gradient(to right,#3BF686,#4CA9FF)', WebkitBackgroundClip:'text', backgroundClip:'text', color:'transparent' }}>wara</span>
+        </span>
+        <button
+          onClick={() => setOpen(!open)}
+          className="w-10 h-10 flex flex-col justify-center items-center gap-[5px] rounded-xl border border-white/10 bg-white/5 backdrop-blur-md"
+          aria-label="Toggle menu"
+        >
+          <span className={`block w-5 h-[2px] bg-white rounded transition-all duration-300 ${open ? 'rotate-45 translate-y-[7px]' : ''}`} />
+          <span className={`block w-5 h-[2px] bg-white rounded transition-all duration-300 ${open ? 'opacity-0' : ''}`} />
+          <span className={`block w-5 h-[2px] bg-white rounded transition-all duration-300 ${open ? '-rotate-45 -translate-y-[7px]' : ''}`} />
+        </button>
+      </div>
+
+      {/* Mobile dropdown */}
+      {open && (
+        <div className="md:hidden absolute top-20 left-4 right-4 rounded-2xl border border-white/10 bg-black/80 backdrop-blur-xl p-4 flex flex-col gap-1 shadow-[0_16px_48px_rgba(0,0,0,0.5)]">
+          {nav.map((item) => (
+            <a
+              key={item.id}
+              href={item.path}
+              onClick={() => { setActive(item.name); setOpen(false) }}
+              className={`px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
+                active === item.name
+                  ? 'bg-gradient-to-r from-[#3BF686]/15 to-[#4CA9FF]/15 text-white border border-white/10'
+                  : 'text-white/60 hover:text-white hover:bg-white/5'
+              }`}
+            >
+              {item.name}
+            </a>
+          ))}
+        </div>
+      )}
+    </nav>
+  )
 }
 
 export default Navbar

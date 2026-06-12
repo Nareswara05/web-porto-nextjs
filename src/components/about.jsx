@@ -1,81 +1,132 @@
-import React, { useEffect } from "react";
-import Image from "next/image";
-import { me } from "@/lib/utils/image";
+'use client';
+
+import React, { useState } from "react";
 import { TbDownload } from "react-icons/tb";
+import { FaReact, FaFigma, FaGithub } from "react-icons/fa";
+import { SiNextdotjs, SiTailwindcss } from "react-icons/si";
+import { HiCode, HiLightBulb, HiUsers } from "react-icons/hi";
 import WhatIDo from "./what-i-do";
 
+const stats = [
+  { icon: HiCode,      value: '20+',  label: 'Projects',   color: '#3BF686' },
+  { icon: HiUsers,     value: '5+',   label: 'Companies',  color: '#4CA9FF' },
+  { icon: HiLightBulb,value: '3+',   label: 'Years Exp.', color: '#c084fc' },
+];
+
+const techBadges = [
+  { icon: SiNextdotjs,    label: 'Next.js',     delay: '0s'    },
+  { icon: FaReact,        label: 'React',       delay: '0.4s'  },
+  { icon: SiTailwindcss,  label: 'Tailwind',    delay: '0.8s'  },
+  { icon: FaFigma,        label: 'Figma',       delay: '1.2s'  },
+  { icon: FaGithub,       label: 'GitHub',      delay: '1.6s'  },
+];
+
 const About = () => {
-  
+  const [hovered, setHovered] = useState(null);
 
   return (
-    <div id="about" className="flex justify-center items-center flex-col gap-16" data-aos="fade-up">
-      <div
-        className="pb-2 w-fit border-secondary border-b-2"
-      >
-        <h1 className="text-center text-white text-3xl md:text-[40px] font-bold">
-          About Me
-        </h1>
+    <section id="about" className="flex flex-col gap-20">
+
+      {/* Section header */}
+      <div className="flex flex-col items-center gap-3">
+        <span className="about-section-label">Who I Am</span>
+        <h2 className="text-3xl md:text-[42px] font-bold text-white text-center leading-tight">About Me</h2>
+        <div className="w-16 h-[3px] rounded-full" style={{ background: 'linear-gradient(to right,#3BF686,#4CA9FF)' }} />
       </div>
 
-      <div className="flex lg:flex-row flex-col-reverse items-center md:justify-between lg:mt-8 h-fit w-full">
-        <div
-          className="flex flex-col justify-between items-start"
-        >
-          <div>
-            <h1
-              style={{
-                background: "linear-gradient(to right, #3BF686, #4CA9FF)",
-                WebkitBackgroundClip: "text",
-                backgroundClip: "text",
-                color: "transparent",
-              }}
-              className="text-[32px] font-bold"
-            >
-              Hello!
-            </h1>
-            <h1 className="lg:text-lg text-justify text-white text-sm font-normal lg:max-w-[500px] xl:max-w-[600px]">
-              My name is Nareswara Maulana Aletha Alhaq, but you can call me
-              Nares. I am a student at SMK Raden Umar Said Kudus with a keen
-              interest in{" "}
-              <span className="text-primary">FrontEnd Web Development</span> and{" "}
-              <span className="text-secondary">UI/UX Design</span>. I love
-              turning design mockups into interactive, user-friendly websites
-              using modern web technologies. My passion for UI/UX design comes
-              from a desire to create intuitive and enjoyable user experiences.
-              I am proficient with tools like Figma and Adobe XD, and I value
-              collaboration and communication in team settings.
-            </h1>
-          </div>
-          <a
-            href="/CV_Nares.pdf"
-            download="CV_Nares.pdf"
-            className="w-full"
-          >
-            <button
-              type="button"
-              className="bg-transparent mt-8 text-center w-full sm:w-48 md:w-64 xl:w-72 rounded-2xl h-14 relative text-white lg:text-md font-medium border-[#27272A] border group"
-            >
-              <p className="transform -translate-x-5 text-sm">Download CV</p>
-              <div className="bg-[#27272A] text-2xl backdrop-blur-xl rounded-xl h-12 w-1/4 flex items-center justify-center absolute right-1 top-[4px] group-hover:w-full z-10 duration-500">
+      {/* 2-col layout */}
+      <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+
+        {/* LEFT — Bio */}
+        <div className="flex flex-col gap-6 lg:flex-1">
+          <h3 className="about-hello">Hello! 👋</h3>
+          <p className="text-white/70 text-sm md:text-base leading-relaxed">
+            My name is <span className="text-white font-semibold">Nareswara Maulana Aletha Alhaq</span>, but you can call me{' '}
+            <span className="text-white font-semibold">Nares</span>. I am a student at SMK Raden Umar Said Kudus
+            with a keen interest in{' '}
+            <span className="font-semibold" style={{ color: '#3BF686' }}>Frontend Web Development</span> and{' '}
+            <span className="font-semibold" style={{ color: '#4CA9FF' }}>UI/UX Design</span>.
+          </p>
+          <p className="text-white/60 text-sm md:text-base leading-relaxed">
+            I love turning design mockups into interactive, user-friendly websites using modern web technologies.
+            Proficient with <span className="text-white/80">Figma</span> and{' '}
+            <span className="text-white/80">Adobe XD</span>, and I value collaboration in team settings.
+          </p>
+
+          <a href="/CV_Nares.pdf" download="CV_Nares.pdf">
+            <button className="about-cv-btn group">
+              <span>Download CV</span>
+              <span className="about-cv-icon group-hover:rotate-12 transition-transform duration-300">
                 <TbDownload />
-              </div>
+              </span>
             </button>
           </a>
         </div>
 
-        <div>
-          <Image
-            src={me}
-            className="lg:w-[350px] h-[200px] md:h-[350px] rounded-xl object-cover"
-            alt=""
-          />
+        {/* RIGHT — Interactive panel */}
+        <div className="about-panel lg:flex-shrink-0">
+
+          {/* Ambient glow */}
+          <div className="about-panel-glow" />
+
+          {/* Name card */}
+          <div className="about-name-card">
+            <div className="about-avatar-ring">
+              <div className="about-avatar-inner">N</div>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-white font-bold text-base leading-tight">Nareswara</span>
+              <span className="text-white/45 text-xs mt-0.5">Frontend Dev · UI/UX Designer</span>
+            </div>
+            <div className="about-online-dot" />
+          </div>
+
+          {/* Stats row */}
+          <div className="about-stats-row">
+            {stats.map(({ icon: Icon, value, label, color }) => (
+              <div
+                key={label}
+                className="about-stat-card"
+                onMouseEnter={() => setHovered(label)}
+                onMouseLeave={() => setHovered(null)}
+                style={hovered === label ? { borderColor: color + '55', background: color + '0D' } : {}}
+              >
+                <Icon className="text-lg" style={{ color }} />
+                <span className="about-stat-val" style={{ color }}>{value}</span>
+                <span className="about-stat-lbl">{label}</span>
+              </div>
+            ))}
+          </div>
+
+          {/* Tech stack */}
+          <div className="flex flex-col gap-3">
+            <span className="text-[10px] text-white/30 uppercase tracking-[0.15em] font-semibold">Tech Stack</span>
+            <div className="flex flex-wrap gap-2">
+              {techBadges.map(({ icon: Icon, label, delay }) => (
+                <div
+                  key={label}
+                  className="about-tech-badge"
+                  style={{ animationDelay: delay }}
+                >
+                  <Icon className="text-sm" />
+                  <span>{label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Availability bar */}
+          <div className="about-avail-bar">
+            <span className="about-avail-dot" />
+            <span className="text-xs text-white/55 font-medium">Available for new opportunities</span>
+          </div>
+
         </div>
       </div>
 
-      <div >
-        <WhatIDo />
-      </div>
-    </div>
+      {/* What I Do */}
+      <WhatIDo />
+    </section>
   );
 };
 
