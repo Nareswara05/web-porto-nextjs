@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaHtml5, FaCss3, FaReact, FaPhp, FaJava } from 'react-icons/fa';
 import { IoLogoJavascript } from "react-icons/io5";
-import { SiNextdotjs, SiFlutter, SiMysql, SiLaravel, SiTypescript } from 'react-icons/si';
+import { SiNextdotjs, SiFlutter, SiMysql, SiLaravel, SiTypescript, SiGo, SiPython } from 'react-icons/si';
 import { RiTailwindCssFill } from "react-icons/ri";
 import CardSkill from './common/card-skill';
 
@@ -18,6 +18,8 @@ const skills = [
   { logo: SiMysql,         title: 'MySQL',         difficulty: 'Intermediate', color: 'group-hover:text-[#5DADE2]' },
   { logo: SiTypescript,    title: 'TypeScript',    difficulty: 'Intermediate', color: 'group-hover:text-[#3178C6]' },
   { logo: FaJava,          title: 'Java',          difficulty: 'Intermediate', color: 'group-hover:text-[#00B0FF]' },
+  { logo: SiGo,            title: 'Golang',        difficulty: 'Intermediate', color: 'group-hover:text-[#00ADD8]' },
+  { logo: SiPython,        title: 'Python',        difficulty: 'Intermediate', color: 'group-hover:text-[#3776AB]' },
 ];
 
 const Skill = () => {
@@ -26,8 +28,6 @@ const Skill = () => {
 
   return (
     <section className="flex flex-col gap-16" id="skill">
-      
-      {/* Header */}
       <div className="flex flex-col items-center gap-3">
         <span className="text-xs font-semibold tracking-[0.2em] uppercase skill-label">
           Tech Stack
@@ -36,7 +36,6 @@ const Skill = () => {
         <div className="w-16 h-[3px] rounded-full skill-bar-accent" />
       </div>
 
-      {/* Advanced */}
       <div className="flex flex-col gap-6">
         <div className="flex items-center gap-3">
           <span className="skill-badge skill-badge-advanced">Advanced</span>
@@ -49,7 +48,6 @@ const Skill = () => {
         </div>
       </div>
 
-      {/* Intermediate */}
       <div className="flex flex-col gap-6">
         <div className="flex items-center gap-3">
           <span className="skill-badge skill-badge-intermediate">Intermediate</span>
@@ -66,3 +64,4 @@ const Skill = () => {
 };
 
 export default Skill;
+
