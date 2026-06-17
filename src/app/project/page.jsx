@@ -2,19 +2,10 @@
 
 import CardProject from '@/components/common/card-project'
 import { nuri } from '@/lib/utils/image'
-import React, { useEffect } from 'react'
+import React from 'react'
 import projects from './project'
-import AOS from 'aos'
-import 'aos/dist/aos.css'
 
 const Page = () => {
-  useEffect(() => {
-    AOS.init({
-      duration: 800,
-      once: false,
-      offset: 50,
-    });
-  }, []);
     
   return (
     <div className='px-10 lg:px-[114px] py-28 lg:py-12 relative z-10'>
