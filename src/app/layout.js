@@ -1,25 +1,35 @@
-import Navbar from '@/components/navbar'
-import './globals.css'
-import { Sora } from 'next/font/google'
-import ParticleComponent from '@/components/particle'
-import Footer from '@/components/footer'
+import Navbar from "@/components/navbar";
+import "./globals.css";
+import { Space_Grotesk } from "next/font/google";
+import Footer from "@/components/footer";
+import { AppProvider } from "@/lib/context";
 
-const sora = Sora({ subsets: ['latin'] })
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
 
 export const metadata = {
-  title: 'Nareswara Porto',
-  description: 'Nareswara Portofolio Website',
-}
+  title: "NARESWARA // BRUTALIST PORTFOLIO",
+  description:
+    "Nareswara Maulana Aletha Alhaq — Fullstack Developer, UI/UX Designer & Project Manager Portfolio",
+  icons: {
+    icon: "/favicon-brutal.png",
+    shortcut: "/favicon-brutal.png",
+    apple: "/favicon-brutal.png",
+  },
+};
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={sora.className}>
-      <ParticleComponent />
-      <Navbar />
-        {children}
-      <Footer/>
+    <html lang="id" suppressHydrationWarning>
+      <body className={spaceGrotesk.className}>
+        <AppProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </AppProvider>
       </body>
     </html>
-  )
+  );
 }

@@ -1,90 +1,168 @@
-"use client"
+"use client";
 
-import React, { useState, useEffect } from 'react'
-
-const nav = [
-  { id: 1, name: 'Home',    path: '/' },
-  { id: 2, name: 'About',   path: '#about' },
-  { id: 3, name: 'Skill',   path: '#skill' },
-  { id: 4, name: 'Project', path: '#project' },
-  { id: 5, name: 'Contact', path: '#contact' },
-]
+import React, { useState, useEffect } from "react";
+import Image from "next/image";
+import { useApp } from "@/lib/context";
+import { HiSun, HiMoon, HiMenu, HiX } from "react-icons/hi";
+import { motion, useScroll, useSpring } from "framer-motion";
 
 const Navbar = () => {
-  const [scrolled, setScrolled] = useState(false)
-  const [active, setActive]     = useState('Home')
-  const [open, setOpen]         = useState(false)
+  const { theme, toggleTheme, lang, toggleLang, t } = useApp();
+  const [active, setActive] = useState("home");
+  const [open, setOpen] = useState(false);
+
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 200,
+    damping: 30,
+    restDelta: 0.001,
+  });
+
+  const navItems = [
+    { id: "home", label: t.nav.home, href: "#home" },
+    { id: "about", label: t.nav.about, href: "#about" },
+    { id: "experience", label: t.nav.experience, href: "#experience" },
+    { id: "skill", label: t.nav.skills, href: "#skill" },
+    { id: "project", label: t.nav.projects, href: "#project" },
+    { id: "contact", label: t.nav.contact, href: "#contact" },
+  ];
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20)
-    window.addEventListener('scroll', onScroll)
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+    const handleScroll = () => {
+      const sections = ["home", "about", "experience", "skill", "project", "contact"];
+      const scrollPos = window.scrollY + 200;
+
+      for (const sec of sections) {
+        const el = document.getElementById(sec);
+        if (el) {
+          const top = el.offsetTop;
+          const height = el.offsetHeight;
+          if (scrollPos >= top && scrollPos < top + height) {
+            setActive(sec);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <nav className={`fixed top-0 inset-x-0 z-50 flex justify-center pt-5 transition-all duration-300`}>
-      {/* Desktop pill */}
-      <div className={`hidden md:flex items-center gap-1 px-2 py-2 rounded-2xl border transition-all duration-300 ${
-        scrolled
-          ? 'border-white/10 bg-black/60 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.4)]'
-          : 'border-white/8 bg-white/5 backdrop-blur-md'
-      }`}>
-        {nav.map((item) => (
+    <header className="fixed top-0 inset-x-0 z-50 px-3 sm:px-6 lg:px-12 pt-3 sm:pt-4 pointer-events-none">
+      {/* Top Brutalist Scroll Progress Bar */}
+      <div className="fixed top-0 left-0 right-0 h-2 bg-black/15 dark:bg-white/10 z-50 border-b-2 border-black">
+        <motion.div
+          style={{ scaleX }}
+          className="h-full bg-[#FFE600] origin-left border-r-2 border-black"
+        />
+      </div>
+
+      <div className="max-w-7xl mx-auto pointer-events-auto mt-1">
+        <div className="brutal-box flex items-center justify-between px-4 py-3 bg-[#F4F0EA] dark:bg-[#171717]">
+          {/* Brand Logo */}
           <a
-            key={item.id}
-            href={item.path}
-            onClick={() => setActive(item.name)}
-            className={`relative px-5 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${
-              active === item.name
-                ? 'text-white'
-                : 'text-white/50 hover:text-white/80'
-            }`}
+            href="#home"
+            onClick={() => setActive("home")}
+            className="flex items-center gap-2 group"
           >
-            {active === item.name && (
-              <span className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#3BF686]/20 to-[#4CA9FF]/20 border border-white/10" />
-            )}
-            <span className="relative z-10">{item.name}</span>
+            <Image
+              src="/logo-nareswara.png"
+              alt="Nareswara Brutalist Logo"
+              width={165}
+              height={42}
+              priority
+              className="h-8 sm:h-10 w-auto object-contain group-hover:-translate-y-0.5 transition-transform"
+            />
           </a>
-        ))}
-      </div>
 
-      {/* Mobile */}
-      <div className="md:hidden flex items-center justify-between w-full px-6">
-        <span className="text-white font-bold text-base tracking-tight">
-          Nares<span style={{ background: 'linear-gradient(to right,#3BF686,#4CA9FF)', WebkitBackgroundClip:'text', backgroundClip:'text', color:'transparent' }}>wara</span>
-        </span>
-        <button
-          onClick={() => setOpen(!open)}
-          className="w-10 h-10 flex flex-col justify-center items-center gap-[5px] rounded-xl border border-white/10 bg-white/5 backdrop-blur-md"
-          aria-label="Toggle menu"
-        >
-          <span className={`block w-5 h-[2px] bg-white rounded transition-all duration-300 ${open ? 'rotate-45 translate-y-[7px]' : ''}`} />
-          <span className={`block w-5 h-[2px] bg-white rounded transition-all duration-300 ${open ? 'opacity-0' : ''}`} />
-          <span className={`block w-5 h-[2px] bg-white rounded transition-all duration-300 ${open ? '-rotate-45 -translate-y-[7px]' : ''}`} />
-        </button>
-      </div>
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center gap-2">
+            {navItems.map((item) => {
+              const isActive = active === item.id;
+              return (
+                <a
+                  key={item.id}
+                  href={item.href}
+                  onClick={() => setActive(item.id)}
+                  className={`px-3 py-1.5 text-xs font-black uppercase tracking-wider border-2 transition-all ${
+                    isActive
+                      ? "bg-[#FFE600] text-black border-black shadow-[3px_3px_0px_0px_#000] -translate-y-0.5"
+                      : "border-transparent text-black dark:text-[#F4F0EA] hover:border-black dark:hover:border-[#F4F0EA] hover:bg-black/5 dark:hover:bg-white/10"
+                  }`}
+                >
+                  {item.label}
+                </a>
+              );
+            })}
+          </nav>
 
-      {/* Mobile dropdown */}
-      {open && (
-        <div className="md:hidden absolute top-20 left-4 right-4 rounded-2xl border border-white/10 bg-black/80 backdrop-blur-xl p-4 flex flex-col gap-1 shadow-[0_16px_48px_rgba(0,0,0,0.5)]">
-          {nav.map((item) => (
-            <a
-              key={item.id}
-              href={item.path}
-              onClick={() => { setActive(item.name); setOpen(false) }}
-              className={`px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
-                active === item.name
-                  ? 'bg-gradient-to-r from-[#3BF686]/15 to-[#4CA9FF]/15 text-white border border-white/10'
-                  : 'text-white/60 hover:text-white hover:bg-white/5'
+          {/* Controls: Lang & Theme + Mobile Menu Button */}
+          <div className="flex items-center gap-2 sm:gap-3">
+            {/* Language Switcher */}
+            <button
+              onClick={toggleLang}
+              aria-label="Toggle Language"
+              title={lang === "id" ? "Switch to English" : "Ganti ke Bahasa Indonesia"}
+              className="brutal-btn px-2.5 py-1.5 text-xs bg-[#00F0FF] text-black border-2 border-black shadow-[3px_3px_0px_0px_#000] font-black"
+            >
+              <span>{lang === "id" ? "🇮🇩 ID" : "🇬🇧 EN"}</span>
+            </button>
+
+            {/* Theme Switcher */}
+            <button
+              onClick={toggleTheme}
+              aria-label="Toggle Theme"
+              title={theme === "light" ? "Switch to Dark Mode" : "Switch to Light Mode"}
+              className={`brutal-btn p-2 text-base border-2 border-black shadow-[3px_3px_0px_0px_#000] ${
+                theme === "light"
+                  ? "bg-[#A3E635] text-black"
+                  : "bg-[#FF5C00] text-white"
               }`}
             >
-              {item.name}
-            </a>
-          ))}
-        </div>
-      )}
-    </nav>
-  )
-}
+              {theme === "light" ? <HiMoon className="w-4 h-4" /> : <HiSun className="w-4 h-4" />}
+            </button>
 
-export default Navbar
+            {/* Mobile Hamburger */}
+            <button
+              onClick={() => setOpen(!open)}
+              aria-label="Toggle Menu"
+              className="lg:hidden brutal-btn p-2 bg-[#FFE600] text-black border-2 border-black shadow-[3px_3px_0px_0px_#000]"
+            >
+              {open ? <HiX className="w-5 h-5" /> : <HiMenu className="w-5 h-5" />}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Dropdown Menu */}
+        {open && (
+          <div className="lg:hidden mt-2 brutal-box p-4 bg-[#F4F0EA] dark:bg-[#171717] flex flex-col gap-2">
+            {navItems.map((item) => {
+              const isActive = active === item.id;
+              return (
+                <a
+                  key={item.id}
+                  href={item.href}
+                  onClick={() => {
+                    setActive(item.id);
+                    setOpen(false);
+                  }}
+                  className={`px-4 py-3 text-sm font-black uppercase tracking-wider border-2 transition-all ${
+                    isActive
+                      ? "bg-[#FFE600] text-black border-black shadow-[4px_4px_0px_0px_#000]"
+                      : "bg-white dark:bg-[#222] text-black dark:text-[#F4F0EA] border-black dark:border-[#F4F0EA]"
+                  }`}
+                >
+                  {item.label}
+                </a>
+              );
+            })}
+          </div>
+        )}
+      </div>
+    </header>
+  );
+};
+
+export default Navbar;

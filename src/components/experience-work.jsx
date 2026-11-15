@@ -1,136 +1,97 @@
-import React from 'react';
+"use client";
 
-const experiences = [
-  {
-    id: 1,
-    period: 'Okt 2025 – Mar 2026',
-    role: 'Project Manager & Frontend Web Developer',
-    company: 'Aston Sistem Indonesia',
-    type: 'Internship',
-    description: [
-      'Architected early-stage system foundations including ERDs and initial prototypes.',
-      'Managed end-to-end project lifecycles by establishing workflows and defining strict timelines.',
-      'Led ongoing client communications and facilitated strategic milestone meetings.',
-      'Developed responsive front-end interfaces enforcing collaborative engineering best practices (Git/VCS).',
-      'Mentored cross-functional team members and resolved technical blockers to ensure timely delivery.',
-    ],
-  },
-  {
-    id: 2,
-    period: 'Feb 2025 – Mar 2025',
-    role: 'Internship UI/UX Designer',
-    company: 'Fundex.id',
-    type: 'Internship',
-    description: [
-      'Spearheaded the UI/UX redesign of the Fundex landing page to elevate visual appeal.',
-      'Analyzed and optimized end-to-end user flows, eliminating friction points.',
-      'Developed comprehensive design systems and moodboards from scratch.',
-    ],
-  },
-  {
-    id: 3,
-    period: 'Okt 2024 – Mar 2025',
-    role: 'Internship Frontend Developer & Project Manager',
-    company: 'PT Data Utama Dinamika',
-    type: 'Internship',
-    description: [
-      'Architected and developed production-ready websites tailored to solve client challenges.',
-      'Led collaborative team workflows and managed strict project timelines.',
-      'Translated complex client needs into scalable web features and integrated APIs.',
-      'Ensured flawless system performance through rigorous testing and bug resolution.',
-    ],
-  },
-  {
-    id: 4,
-    period: 'Mar 2024 – Mar 2025',
-    role: 'Frontend Developer & UI/UX Designer',
-    company: 'ByteBuilder IT Solution',
-    type: 'Full-time',
-    description: [
-      'Facilitated strategic client meetings to align project objectives and present design concepts.',
-      'Conducted in-depth user interviews and research to drive data-informed solutions.',
-      'Crafted interactive, high-fidelity, responsive UI designs using Figma.',
-      'Engineered robust web interfaces using Next.js with seamless API integration.',
-    ],
-  },
-  {
-    id: 5,
-    period: 'Nov 2023 – Des 2023',
-    role: 'Internship UI/UX Designer',
-    company: 'PT Nuri Gaya Citra',
-    type: 'Internship',
-    description: [
-      'Designed the User Interface for a Cash on Delivery (COD) feature.',
-      'Conducted user research to identify key pain points.',
-      'Executed the end-to-end UI design process, from wireframing to high-fidelity mockups.',
-    ],
-  },
+import React from "react";
+import { useApp } from "@/lib/context";
+import { BrutalReveal } from "./brutal-motion";
+
+const badgeColors = [
+  "bg-[#FFE600] text-black",
+  "bg-[#00F0FF] text-black",
+  "bg-[#A3E635] text-black",
+  "bg-[#FF5C00] text-white",
+  "bg-[#FF2A85] text-white",
 ];
 
-const typeColor = {
-  'Full-time': { bg: 'rgba(59,246,134,0.12)', border: 'rgba(59,246,134,0.3)', color: '#3BF686' },
-  'Internship': { bg: 'rgba(76,169,255,0.12)', border: 'rgba(76,169,255,0.3)', color: '#4CA9FF' },
-};
-
 const ExperienceWork = () => {
+  const { t } = useApp();
+
   return (
-    <section className="flex flex-col gap-14">
+    <section id="experience" className="py-12 flex flex-col gap-10">
+      {/* Section Header */}
+      <BrutalReveal>
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b-4 border-black dark:border-[#F4F0EA] pb-4">
+          <div className="flex flex-col gap-2">
+            <span className="brutal-tag bg-[#00F0FF] text-black border-black w-fit">
+              {t.experience.tag}
+            </span>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tighter text-black dark:text-[#F4F0EA]">
+              {t.experience.title}
+            </h2>
+          </div>
+          <span className="font-mono text-xs sm:text-sm font-bold uppercase opacity-75">
+            {t.experience.subtitle}
+          </span>
+        </div>
+      </BrutalReveal>
 
-      {/* Header */}
-      <div className="flex flex-col items-center gap-3">
-        <span className="exp-label">Career Journey</span>
-        <h2 className="text-3xl md:text-[42px] font-bold text-white text-center">Work Experience</h2>
-        <div className="w-16 h-[3px] rounded-full" style={{ background: 'linear-gradient(to right,#3BF686,#4CA9FF)' }} />
-      </div>
-
-      {/* Timeline */}
-      <div className="relative">
-        {/* Vertical line */}
-        <div className="absolute left-4 md:left-6 top-0 bottom-0 w-px bg-gradient-to-b from-[#3BF686]/40 via-[#4CA9FF]/20 to-transparent" />
-
-        <div className="flex flex-col gap-6">
-          {experiences.map((exp, idx) => {
-            const tc = typeColor[exp.type] ?? typeColor['Internship'];
-            return (
-              <div key={exp.id} className="relative pl-14 md:pl-20 group">
-                {/* Dot */}
-                <div className="exp-dot group-hover:scale-125 transition-transform duration-300" />
-                {/* Index number */}
-                <span className="exp-idx">{String(idx + 1).padStart(2,'0')}</span>
-
-                {/* Card */}
-                <div className="exp-card group-hover:border-white/20 transition-colors duration-300">
-                  {/* Hover gradient overlay */}
-                  <div className="exp-card-glow" />
-
-                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 relative z-10">
-                    <div className="flex flex-col gap-1">
-                      <h3 className="text-white font-bold text-lg md:text-xl group-hover:text-[#3BF686] transition-colors duration-300 leading-snug">
-                        {exp.role}
-                      </h3>
-                      <p className="text-white/60 text-sm font-medium">{exp.company}</p>
-                    </div>
-                    <div className="flex flex-wrap items-center gap-2 flex-shrink-0">
-                      <span className="exp-period-badge">{exp.period}</span>
-                      <span className="exp-type-badge" style={{ background: tc.bg, border: `1px solid ${tc.border}`, color: tc.color }}>
-                        {exp.type}
-                      </span>
-                    </div>
+      {/* Brutalist Experience List */}
+      <div className="flex flex-col gap-6">
+        {t.experience.items.map((exp, idx) => {
+          const accent = badgeColors[idx % badgeColors.length];
+          return (
+            <BrutalReveal key={exp.id} delay={idx * 0.04} y={20}>
+              <div className="brutal-box brutal-box-interactive bg-white dark:bg-[#171717] overflow-hidden">
+                {/* Top Header Bar */}
+                <div className="flex flex-wrap items-center justify-between gap-3 px-5 py-3 border-b-3 border-black dark:border-[#F4F0EA] bg-[#F4F0EA] dark:bg-[#222]">
+                  <div className="flex items-center gap-3">
+                    <span
+                      className={`px-3 py-1 font-mono text-sm font-black border-2 border-black shadow-[2px_2px_0px_0px_#000] ${accent}`}
+                    >
+                      #{exp.id}
+                    </span>
+                    <span className="font-mono text-xs sm:text-sm font-black uppercase tracking-wider">
+                      {exp.company}
+                    </span>
                   </div>
 
-                  <ul className="mt-4 flex flex-col gap-2 relative z-10">
-                    {exp.description.map((d, i) => (
-                      <li key={i} className="flex gap-3 text-white/55 text-sm leading-relaxed">
-                        <span className="exp-bullet mt-1.5 flex-shrink-0" />
-                        {d}
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="px-3 py-1 bg-white dark:bg-black text-black dark:text-[#F4F0EA] border-2 border-black dark:border-[#F4F0EA] font-mono text-xs font-bold uppercase">
+                      {exp.period}
+                    </span>
+                    <span
+                      className={`px-3 py-1 font-mono text-xs font-black uppercase border-2 border-black ${
+                        exp.type === "Full-time" || exp.type === "Penuh Waktu"
+                          ? "bg-[#A3E635] text-black"
+                          : "bg-[#FFE600] text-black"
+                      }`}
+                    >
+                      {exp.type}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Card Body */}
+                <div className="p-6 sm:p-8 flex flex-col gap-4">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-black uppercase tracking-tight text-black dark:text-[#F4F0EA]">
+                    {exp.role}
+                  </h3>
+
+                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-2">
+                    {exp.description.map((desc, i) => (
+                      <li
+                        key={i}
+                        className="flex items-start gap-3 p-3 bg-[#F4F0EA]/60 dark:bg-[#222]/60 border-2 border-black/20 dark:border-white/15 text-sm font-medium leading-relaxed"
+                      >
+                        <span className="w-2.5 h-2.5 mt-1.5 bg-[#FF5C00] border border-black flex-shrink-0" />
+                        <span>{desc}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
               </div>
-            );
-          })}
-        </div>
+            </BrutalReveal>
+          );
+        })}
       </div>
     </section>
   );
