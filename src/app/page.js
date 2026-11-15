@@ -1,20 +1,20 @@
-"use client"
+"use client";
 
-import About from '@/components/about';
-import ExperienceWork from '@/components/experience-work';
-import FeaturedProject from '@/components/featured-project';
-import Hero from '@/components/hero';
-import Skill from '@/components/skill';
-import React from 'react';
+import React from "react";
+import Hero from "@/components/hero";
+import About from "@/components/about";
+import ExperienceWork from "@/components/experience-work";
+import Skill from "@/components/skill";
+import FeaturedProject from "@/components/featured-project";
 
 export default function Home() {
   return (
-      <div className='flex flex-col gap-20 relative z-20 px-[40px] md:px-[60px]  lg:px-[114px] py-12'>
-        <Hero />
-        <About />
-        <ExperienceWork/>
-        <Skill/>
-        <FeaturedProject/>
-      </div>
-  )
+    <main className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 relative z-10 flex flex-col gap-8">
+      <Hero />
+      <About />
+      <ExperienceWork />
+      <Skill />
+      <FeaturedProject />
+    </main>
+  );
 }

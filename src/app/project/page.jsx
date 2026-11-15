@@ -1,4 +1,4 @@
-"use client"
+import { redirect } from "next/navigation";
 
 import CardProject from '@/components/common/card-project'
 import { nuri } from '@/lib/utils/image'
@@ -30,5 +30,3 @@ const Page = () => {
     </div>
   )
 }
-
-export default Page
