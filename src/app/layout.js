@@ -10,7 +10,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata = {
-  title: "NARESWARA // BRUTALIST PORTFOLIO",
+  title: "NARESWARA PORTOFOLIO",
   description:
     "Nareswara Maulana Aletha Alhaq — Fullstack Developer, UI/UX Designer & Project Manager Portfolio",
   icons: {
